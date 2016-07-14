@@ -1,4 +1,3 @@
-//
 //  tuningCell.swift
 //  Smart Scales
 //
@@ -13,33 +12,49 @@ class tuningCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var tuningLabel: UILabel!
     @IBOutlet weak var tuningPicker: UIPickerView!
     
-    var tuneArr = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
-    //variables to store the tuning
-    var string1Tune = ""
-    var string2Tune = ""
-    var string3Tune = ""
-    var string4Tune = ""
-    var string5Tune = ""
-    var string6Tune = ""
+    let tuneArr = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
+    //variable to store the tuning
+    var myTuning = ["E", "A", "D", "G", "B", "E"]
+
+    var myTuningIndex: [Int] {
+        get {
+            let myTuningIndex: [Int]
+            
+            if let myTuningData = NSUserDefaults.standardUserDefaults().objectForKey("tuning") as? NSData, index = NSKeyedUnarchiver.unarchiveObjectWithData(myTuningData) as? [Int] {
+                myTuningIndex = index
+            } else {
+                myTuningIndex = [7, 0, 5, 10, 2, 7]
+                let myTuningData = NSKeyedArchiver.archivedDataWithRootObject(myTuningIndex)
+                NSUserDefaults.standardUserDefaults().setObject(myTuningData, forKey: "tuning")
+            }
+            
+            return myTuningIndex
+        }
+        set {
+            let myTuningData = NSKeyedArchiver.archivedDataWithRootObject(newValue)
+            NSUserDefaults.standardUserDefaults().setObject(myTuningData, forKey: "tuning")
+        }
+    }
     
-    
+    //called in Settings.swift when displaying contents of the cell
+    func update() {
+        
+        print(myTuningIndex)
+        //set picker components corresponding to myTuningIndex settings
+        for index in 0...5 {
+            tuningPicker.selectRow(myTuningIndex[index], inComponent: index, animated: true)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         tuningPicker.delegate = self
         tuningPicker.dataSource = self
-        tuningPicker.selectRow(7, inComponent: 0, animated: true)
-        tuningPicker.selectRow(0, inComponent: 1, animated: true)
-        tuningPicker.selectRow(5, inComponent: 2, animated: true)
-        tuningPicker.selectRow(10, inComponent: 3, animated: true)
-        tuningPicker.selectRow(2, inComponent: 4, animated: true)
-        tuningPicker.selectRow(7, inComponent: 5, animated: true)
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -58,31 +73,15 @@ class tuningCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource 
     
     //set the note values for each string (aka the tuning)
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0 {
-            string1Tune = tuneArr[row]
-        }
-        if component == 1 {
-            string2Tune = tuneArr[row]
-        }
-        if component == 2 {
-            string3Tune = tuneArr[row]
-        }
-        if component == 3 {
-            string4Tune = tuneArr[row]
-        }
-        if component == 4 {
-            string5Tune = tuneArr[row]
-        }
-        if component == 5 {
-            string6Tune = tuneArr[row]
-        }
-        print(string1Tune)
-        print(string2Tune)
-        print(string3Tune)
-        print(string4Tune)
-        print(string5Tune)
-        print(string6Tune)
         
+        var index = myTuningIndex
+        myTuning[component] = tuneArr[row]
+        index[component] = row
+        myTuningIndex = index
+        
+        //update arrays depending on picker
+        print(myTuning)
+        print(myTuningIndex)
     }
 
 }

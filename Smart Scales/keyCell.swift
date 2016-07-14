@@ -15,7 +15,22 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var keyArr = ["A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab"]
     
-    var Key = ""
+    var myKey = "C"
+    var myKeyIndex = 0
+    
+    
+    func updateKey() {
+        
+        print(myKey)
+        //set picker components corresponding to myTuningIndex settings
+        let myKeyIndexData = NSUserDefaults.standardUserDefaults()
+        
+        if (myKeyIndexData.valueForKey("Key") != nil){
+        myKeyIndex = myKeyIndexData.valueForKey("Key") as! NSInteger!
+        }
+
+        keyPicker.selectRow(myKeyIndex, inComponent: 0, animated: true)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,8 +59,12 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        Key = keyArr[row]
-        print(Key)
+        myKey = keyArr[row]
+        myKeyIndex = NSInteger(row)
+        let myKeyIndexData = NSUserDefaults.standardUserDefaults()
+        myKeyIndexData.setInteger(row, forKey: "Key")
+        myKeyIndexData.synchronize()
+        print(myKey)
     }
 
 }

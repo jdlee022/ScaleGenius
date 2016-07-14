@@ -14,8 +14,22 @@ class scaleCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var scalePicker: UIPickerView!
     
     let scaleArr = ["Major", "Major Pentatonic", "Minor"]
-    var Scale = ""
+    var myScale = ""
+    var myScaleIndex = 0
     
+    
+    func updateScale() {
+        
+        print(myScale)
+        //set picker components corresponding to myTuningIndex settings
+        let myScaleIndexData = NSUserDefaults.standardUserDefaults()
+        
+        if (myScaleIndexData.valueForKey("Scale") != nil){
+            myScaleIndex = myScaleIndexData.valueForKey("Scale") as! NSInteger!
+        }
+        
+        scalePicker.selectRow(myScaleIndex, inComponent: 0, animated: true)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,8 +57,12 @@ class scaleCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        Scale = scaleArr[row]
-        print(Scale)
+        myScale = scaleArr[row]
+        myScaleIndex = NSInteger(row)
+        let myScaleIndexData = NSUserDefaults.standardUserDefaults()
+        myScaleIndexData.setInteger(row, forKey: "Scale")
+        myScaleIndexData.synchronize()
+        print(myScale)
     }
 
 }

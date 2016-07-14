@@ -13,9 +13,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     
-    
-    
-    
     //how many rows for each section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -29,7 +26,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 0 {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("keyCell", forIndexPath: indexPath) as! keyCell
             cell.keyLabel.text = "Key"
-            
+            cell.updateKey()
             return cell
         }
         
@@ -37,7 +34,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 1 {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("scaleCell", forIndexPath: indexPath) as! scaleCell
             cell.scaleLabel.text = "Scale"
-            
+            cell.updateScale()
             return cell
         }
             
@@ -45,7 +42,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         else{
             let cell = self.tableView.dequeueReusableCellWithIdentifier("tuningCell", forIndexPath: indexPath) as! tuningCell
             cell.tuningLabel.text = "Tuning"
-            
+            cell.update()
             return cell
         }
     }
@@ -65,6 +62,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         //add additional code
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
