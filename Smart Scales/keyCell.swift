@@ -21,12 +21,16 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func updateKey() {
         
-        print(myKey)
         //set picker components corresponding to myTuningIndex settings
         let myKeyIndexData = NSUserDefaults.standardUserDefaults()
         
-        if (myKeyIndexData.valueForKey("Key") != nil){
-        myKeyIndex = myKeyIndexData.valueForKey("Key") as! NSInteger!
+        if (myKeyIndexData.valueForKey("KeyIndex") != nil){
+        myKeyIndex = myKeyIndexData.valueForKey("KeyIndex") as! NSInteger!
+        }
+        
+        // save myKey with NSUserDefault
+        if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("KeyString") {
+            myKey = myLoadedString
         }
 
         keyPicker.selectRow(myKeyIndex, inComponent: 0, animated: true)
@@ -59,12 +63,14 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        myKey = keyArr[row]
         myKeyIndex = NSInteger(row)
+        myKey = keyArr[myKeyIndex]
+        //save myKey with NSUserDefaults
+        NSUserDefaults.standardUserDefaults().setObject(myKey, forKey: "KeyString")
+ 
         let myKeyIndexData = NSUserDefaults.standardUserDefaults()
-        myKeyIndexData.setInteger(row, forKey: "Key")
-        myKeyIndexData.synchronize()
-        print(myKey)
+        myKeyIndexData.setInteger(row, forKey: "KeyIndex")
+        myKeyIndexData.synchronize()        
     }
 
 }

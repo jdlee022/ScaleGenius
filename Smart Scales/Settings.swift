@@ -11,6 +11,12 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
+    let notesArr = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
+    var Key: String = ""
+    var Scale: String = ""
+    var Tuning: [String] = [""]
+    var notesToDisplay = [""]
+    
     
     
     //how many rows for each section
@@ -27,6 +33,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = self.tableView.dequeueReusableCellWithIdentifier("keyCell", forIndexPath: indexPath) as! keyCell
             cell.keyLabel.text = "Key"
             cell.updateKey()
+            Key = cell.myKey
+            
+            //print("Settings: \(cell.myKey)")
             return cell
         }
         
@@ -35,6 +44,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = self.tableView.dequeueReusableCellWithIdentifier("scaleCell", forIndexPath: indexPath) as! scaleCell
             cell.scaleLabel.text = "Scale"
             cell.updateScale()
+            Scale = cell.myScale
             return cell
         }
             
@@ -42,7 +52,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         else{
             let cell = self.tableView.dequeueReusableCellWithIdentifier("tuningCell", forIndexPath: indexPath) as! tuningCell
             cell.tuningLabel.text = "Tuning"
-            cell.update()
+            cell.updateTuning()
+            Tuning = cell.myTuning
             return cell
         }
     }
@@ -61,17 +72,34 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         //add additional code
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //add additional code
     }
+    
+    //compute notes to be displayed on the fretboard
+    func computeNotesToDisplay() {
+        tableView.reloadData()
+        notesToDisplay = Tuning
+        notesToDisplay.append(Scale)
+        notesToDisplay.append(Key)
+        print(notesToDisplay)
+        
+        //return notesToDisplay
+    }
+    
+    //debugger button (delete later)
+    @IBAction func testButton(sender: AnyObject) {
+        computeNotesToDisplay()
+    }
+
     
 }
