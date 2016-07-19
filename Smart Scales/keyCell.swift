@@ -21,6 +21,8 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func updateKey() {
         
+        //print(myKey)
+        
         //set picker components corresponding to myTuningIndex settings
         let myKeyIndexData = NSUserDefaults.standardUserDefaults()
         
@@ -65,9 +67,9 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         myKeyIndex = NSInteger(row)
         myKey = keyArr[myKeyIndex]
+        
         //save myKey with NSUserDefaults
         NSUserDefaults.standardUserDefaults().setObject(myKey, forKey: "KeyString")
- 
         let myKeyIndexData = NSUserDefaults.standardUserDefaults()
         myKeyIndexData.setInteger(row, forKey: "KeyIndex")
         myKeyIndexData.synchronize()        

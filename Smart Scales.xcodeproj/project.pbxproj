@@ -13,6 +13,7 @@
 		FC4DEB171D35586A00CA5A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4DEB161D35586A00CA5A4E /* Assets.xcassets */; };
 		FC4DEB1A1D35586A00CA5A4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4DEB181D35586A00CA5A4E /* LaunchScreen.storyboard */; };
 		FC4DEB221D356CAE00CA5A4E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DEB211D356CAE00CA5A4E /* Settings.swift */; };
+		FC5E91951D3D7DBF0008FE54 /* FretboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E91941D3D7DBF0008FE54 /* FretboardView.swift */; };
 		FCF743591D36AE5A0068903D /* keyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF743581D36AE5A0068903D /* keyCell.swift */; };
 		FCF7435B1D36BCF00068903D /* scaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435A1D36BCF00068903D /* scaleCell.swift */; };
 		FCF7435D1D36BD080068903D /* tuningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435C1D36BD080068903D /* tuningCell.swift */; };
@@ -27,6 +28,7 @@
 		FC4DEB191D35586A00CA5A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC4DEB1B1D35586A00CA5A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC4DEB211D356CAE00CA5A4E /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FC5E91941D3D7DBF0008FE54 /* FretboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FretboardView.swift; sourceTree = "<group>"; };
 		FCF743581D36AE5A0068903D /* keyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyCell.swift; sourceTree = "<group>"; };
 		FCF7435A1D36BCF00068903D /* scaleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scaleCell.swift; sourceTree = "<group>"; };
 		FCF7435C1D36BD080068903D /* tuningCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tuningCell.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				FC4DEB0F1D35586900CA5A4E /* AppDelegate.swift */,
 				FC4DEB131D35586A00CA5A4E /* Main.storyboard */,
 				FC4DEB111D35586900CA5A4E /* ViewController.swift */,
+				FC5E91941D3D7DBF0008FE54 /* FretboardView.swift */,
 				FC4DEB211D356CAE00CA5A4E /* Settings.swift */,
 				FCF7435E1D36BD180068903D /* Custom Cells */,
 				FC4DEB161D35586A00CA5A4E /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 				FCF743591D36AE5A0068903D /* keyCell.swift in Sources */,
 				FC4DEB121D35586900CA5A4E /* ViewController.swift in Sources */,
 				FC4DEB101D35586900CA5A4E /* AppDelegate.swift in Sources */,
+				FC5E91951D3D7DBF0008FE54 /* FretboardView.swift in Sources */,
 				FCF7435B1D36BCF00068903D /* scaleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

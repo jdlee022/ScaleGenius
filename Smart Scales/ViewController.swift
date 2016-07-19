@@ -15,6 +15,11 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //load the background image (fretboard)
+        self.collectionView!.backgroundView = UIImageView(image: UIImage(named: "fretboard")!)
+
+
     }
 
     override func didReceiveMemoryWarning() {

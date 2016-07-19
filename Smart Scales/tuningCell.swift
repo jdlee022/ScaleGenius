@@ -14,7 +14,6 @@ class tuningCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource 
     
     let tuneArr = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
     //variable to store the tuning
-    var myTuning = ["E", "A", "D", "G", "B", "E"]
     
 
     //save myTuningIndex using NSUSerDefaults
@@ -24,15 +23,10 @@ class tuningCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource 
             
             if let myTuningData = NSUserDefaults.standardUserDefaults().objectForKey("tuning") as? NSData, index = NSKeyedUnarchiver.unarchiveObjectWithData(myTuningData) as? [Int] {
                 myTuningIndex = index
-                //store myTuning depending on the saved values of myTuningIndex
-                for abc in 0...5 {
-                    myTuning[abc] = tuneArr[myTuningIndex[abc]]
-                }
                 
             } else {
                 //default values if nothing was stored with NSUserDefaults
                 myTuningIndex = [7, 0, 5, 10, 2, 7]
-                myTuning = ["E", "A", "D", "G", "B", "E"]
                 let myTuningData = NSKeyedArchiver.archivedDataWithRootObject(myTuningIndex)
                 NSUserDefaults.standardUserDefaults().setObject(myTuningData, forKey: "tuning")
             }
@@ -49,6 +43,8 @@ class tuningCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource 
     
     //called in Settings.swift when displaying contents of the cell
     func updateTuning() {
+        
+        //print(myTuningIndex)
         
         //set picker components corresponding to myTuningIndex settings
         for index in 0...5 {
@@ -88,6 +84,7 @@ class tuningCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource 
         var index = myTuningIndex
         index[component] = row
         myTuningIndex = index
+        
     }
 
 }

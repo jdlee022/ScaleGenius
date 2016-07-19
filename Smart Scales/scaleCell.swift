@@ -20,7 +20,8 @@ class scaleCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func updateScale() {
         
-        print(myScale)
+        //print(myScale)
+        
         //set picker components corresponding to myTuningIndex settings
         let myScaleIndexData = NSUserDefaults.standardUserDefaults()
         
@@ -69,7 +70,6 @@ class scaleCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
         let myScaleIndexData = NSUserDefaults.standardUserDefaults()
         myScaleIndexData.setInteger(row, forKey: "ScaleIndex")
         myScaleIndexData.synchronize()
-        print(myScale)
     }
 
 }
