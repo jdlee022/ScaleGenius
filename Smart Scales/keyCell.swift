@@ -13,10 +13,10 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var keyLabel: UILabel!
     @IBOutlet weak var keyPicker: UIPickerView!
     
-    var keyArr = ["A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab"]
+    var keyArr = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
     
     var myKey = "C"
-    var myKeyIndex = 0
+    var myKeyIndex = 3
     
     
     func updateKey() {
@@ -29,11 +29,13 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
         if (myKeyIndexData.valueForKey("KeyIndex") != nil){
         myKeyIndex = myKeyIndexData.valueForKey("KeyIndex") as! NSInteger!
         }
+        else{ myKeyIndex = 3 }
         
         // save myKey with NSUserDefault
         if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("KeyString") {
             myKey = myLoadedString
         }
+        else{ myKey = "C" }
 
         keyPicker.selectRow(myKeyIndex, inComponent: 0, animated: true)
     }

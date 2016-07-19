@@ -11,45 +11,6 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    let notesArr = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
-    var notesToDisplay = [""]
-    //variables used in notesToBeDisplayed()
-    var rootIndex = 0
-    var secondIndex = 0
-    var thirdIndex = 0
-    var fourthIndex = 0
-    var fifthIndex = 0
-    var sixthIndex = 0
-    var seventhIndex = 0
-    
-    
-    //Retrieve values from NSUserDefaults
-    var Key: String {
-        // save myKey with NSUserDefault
-        if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("KeyString") {
-            return myLoadedString
-        }
-        else { return "C" }
-    }
-    var Scale: String {
-        // save myScale with NSUserDefault
-        if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("ScaleString") {
-            return myLoadedString
-        }
-        else { return "Major" }
-        
-    }
-    
-    //???????
-    var Tuning: [Int] {
-        if let myTuningData = NSUserDefaults.standardUserDefaults().objectForKey("tuning") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(myTuningData) as! [Int]
-        }
-        else { return [7, 0, 5, 10, 2, 7] }
-        
-    }
- 
-    
     
     
     //how many rows for each section
@@ -111,56 +72,20 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         //add additional code
     }
-    
-    //compute notes to be displayed on the fretboard
-    func computeNotesToDisplay() ->[String] {
-        tableView.reloadData()
-        print("values in Settings:")
-        print(Key)
-        print(Scale)
-        print(Tuning)
-        
-        //determine notes for MAJOR scale
-        if Scale == "Major"{
-            rootIndex = notesArr.indexOf(Key)!
-            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
-            thirdIndex = (notesArr.indexOf(Key)! + 4) % 12
-            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
-            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
-            sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
-            seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            notesToDisplay = [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
-        }
-        //determine notes for MAJOR PENTATONIC scale
-        if Scale == "Major Pentatonic" {
-            rootIndex = notesArr.indexOf(Key)!
-            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
-            thirdIndex = (notesArr.indexOf(Key)! + 4) % 12
-            //fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
-            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
-            sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
-            //seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            notesToDisplay = [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fifthIndex], notesArr[sixthIndex]]
-        }
-        //determine notes for MINOR scale
-        if Scale == "Minor" {
-            rootIndex = notesArr.indexOf(Key)!
-            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
-            thirdIndex = (notesArr.indexOf(Key)! + 3) % 12
-            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
-            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
-            sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
-            seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            notesToDisplay = [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
-        }
-        
-        print("notes to be displayed: \(notesToDisplay)")
-        return notesToDisplay
-    }
+ 
     
     //debugger button (delete later)
     @IBAction func testButton(sender: AnyObject) {
-        computeNotesToDisplay()
+        tableView.reloadData()
+        //computeNotesToDisplay()
+        //print(notesToDisplay)
+        print("SETTINGSHELPER VALUES:")
+        print(SettingsHelper.Key)
+        print(SettingsHelper.Scale)
+        print("notesToDisplay: \(SettingsHelper.notesToDisplay)")
+        print("first string arr: \(SettingsHelper.firstString)")
+        print("third string arr: \(SettingsHelper.thirdString)")
+
     }
 
     
