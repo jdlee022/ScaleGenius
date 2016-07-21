@@ -54,18 +54,28 @@ import UIKit
             CGContextStrokePath(context)
         }
         
-
+        //draw circle
+        CGContextSetLineWidth(context, 2.0)
+        CGContextSetStrokeColorWithColor(context,
+                                         UIColor.blueColor().CGColor)
+        let noteIcon = CGRectMake(rect.width*0.75/7,rect.height*1.25/26,rect.width*0.5/7,rect.height*0.5/26)
+        CGContextAddEllipseInRect(context, noteIcon)
+        CGContextStrokePath(context)
         
         
-        //draw note icons
+        
+        
+        
+        
+        //draw circle with text in center
         let font: UIFont = UIFont(name: "Helvetica Neue", size: 40)!
         
         for string in 1...6{
-            for fret in 1...24 {
-                if string == 0{
-                    
-                }
-                let noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fifthString[fret], font: font, circleColor: UIColor.blackColor())
+            for fret in 0...23 {
+
+                    let noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: UIColor.blackColor())
+
+                
                 
                 //height changes based on fret position
                 let testRect = CGRectMake(rect.width*CGFloat(Double(string)+0.1)/8, rect.height*CGFloat(Double(fret)+0.2)/26, rect.width*0.8/8, rect.height*0.6/26)
@@ -78,41 +88,9 @@ import UIKit
         
         
         
+        
     }
     
 
 }
 
-
-
-
-//alternate way to draw note icons
-/*
- //draw note icons
- UIGraphicsBeginImageContextWithOptions(CGSize(width: 100, height: 200), false, 0)
- 
- let paragraphStyle = NSMutableParagraphStyle()
- paragraphStyle.alignment = .Center
- 
- let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 36)!, NSForegroundColorAttributeName: UIColor.greenColor()]
- 
- let string = "ACB" as NSString
- // Get the width and height that the text will occupy.
- let stringSize = string.sizeWithAttributes(attributes)
- 
- // Center a rect inside of the image
- // by going half the difference to the right and down.
- string.drawInRect(
- CGRectMake(
- (100 - stringSize.width) / 2,
- (200 - stringSize.height) / 2,
- stringSize.width,
- stringSize.height
- ),
- withAttributes: attributes
- )
- 
- let newImage = UIGraphicsGetImageFromCurrentImageContext()
- 
- UIGraphicsEndImageContext()
- */
