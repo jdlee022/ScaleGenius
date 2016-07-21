@@ -157,6 +157,37 @@ class SettingsHelper {
         return toBeReturned
     }
     //************ finished: initialize arrays for all 6 strings (adjusts for tuning) *************
+    
+    //create a matrix to hold all notes
+    static var noteMatrix: [[String]] {
+        var arr = Array(count: 24, repeatedValue: Array(count: 6, repeatedValue: ""))
+        
+        for fret in 0...23 {
+            for string in 0...5{
+                if string == 0 {
+                    arr[fret][string] = SettingsHelper.sixthString[fret]
+                }
+                if string == 1 {
+                    arr[fret][string] = SettingsHelper.fifthString[fret]
+                }
+                if string == 2 {
+                    arr[fret][string] = SettingsHelper.fourthString[fret]
+                }
+                if string == 3 {
+                    arr[fret][string] = SettingsHelper.thirdString[fret]
+                }
+                if string == 4 {
+                    arr[fret][string] = SettingsHelper.secondString[fret]
+                }
+                if string == 5 {
+                    arr[fret][string] = SettingsHelper.firstString[fret]
+                }
+            }
+        }
+        return arr
+    }
+    
+    
 
 
     

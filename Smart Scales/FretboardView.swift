@@ -54,33 +54,26 @@ import UIKit
             CGContextStrokePath(context)
         }
         
-        //draw circle
-        CGContextSetLineWidth(context, 2.0)
-        CGContextSetStrokeColorWithColor(context,
-                                         UIColor.blueColor().CGColor)
-        let noteIcon = CGRectMake(rect.width*0.75/7,rect.height*1.25/26,rect.width*0.5/7,rect.height*0.5/26)
-        CGContextAddEllipseInRect(context, noteIcon)
-        CGContextStrokePath(context)
+
         
         
-        
-        
-        
-        
-        //draw circle with text in center
+        //draw note icons
         let font: UIFont = UIFont(name: "Helvetica Neue", size: 40)!
         
-        
-        for fret in 1...24 {
-            let noteImage = UIUtility.circleImageWithText(text: "A#", font: font, circleColor: UIColor.blackColor())
-            
-            //height changes based on fret position
-            let testRect = CGRectMake(rect.width*1.1/8, rect.height*CGFloat(Double(fret)+0.2)/26, rect.width*0.8/8, rect.height*0.6/26)
-            //flip the image upside-down and drawInRect
-            UIGraphicsPushContext(context!)
-            noteImage.drawInRect(testRect)
-            UIGraphicsPopContext()
-            
+        for string in 1...6{
+            for fret in 1...24 {
+                if string == 0{
+                    
+                }
+                let noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fifthString[fret], font: font, circleColor: UIColor.blackColor())
+                
+                //height changes based on fret position
+                let testRect = CGRectMake(rect.width*CGFloat(Double(string)+0.1)/8, rect.height*CGFloat(Double(fret)+0.2)/26, rect.width*0.8/8, rect.height*0.6/26)
+                //flip the image upside-down and drawInRect
+                UIGraphicsPushContext(context!)
+                noteImage.drawInRect(testRect)
+                UIGraphicsPopContext()
+            }
         }
         
         
