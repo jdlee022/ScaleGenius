@@ -63,6 +63,55 @@ import UIKit
         CGContextStrokePath(context)
         
         
+        
+        
+        
+        
+        //draw circle with text in center
+        let font: UIFont = UIFont(name: "Helvetica Neue", size: 12)!
+        let circleimage = UIUtility.circleImageWithText(text: "Center text", font: font, circleColor: UIColor.blackColor())
+        
+        CGContextDrawImage(context, rect, circleimage.CGImage)
+ 
+
+        
+        
+        
     }
+    
 
 }
+
+
+
+
+//alternate way to draw note icons
+/*
+ //draw note icons
+ UIGraphicsBeginImageContextWithOptions(CGSize(width: 100, height: 200), false, 0)
+ 
+ let paragraphStyle = NSMutableParagraphStyle()
+ paragraphStyle.alignment = .Center
+ 
+ let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 36)!, NSForegroundColorAttributeName: UIColor.greenColor()]
+ 
+ let string = "ACB" as NSString
+ // Get the width and height that the text will occupy.
+ let stringSize = string.sizeWithAttributes(attributes)
+ 
+ // Center a rect inside of the image
+ // by going half the difference to the right and down.
+ string.drawInRect(
+ CGRectMake(
+ (100 - stringSize.width) / 2,
+ (200 - stringSize.height) / 2,
+ stringSize.width,
+ stringSize.height
+ ),
+ withAttributes: attributes
+ )
+ 
+ let newImage = UIGraphicsGetImageFromCurrentImageContext()
+ 
+ UIGraphicsEndImageContext()
+ */
