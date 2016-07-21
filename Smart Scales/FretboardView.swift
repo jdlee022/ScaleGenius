@@ -23,7 +23,7 @@ import UIKit
         CGContextFillEllipseInRect(context, rect)
         
         //draw fretboard rectangle
-        let rectangle = CGRectMake(rect.width/14,rect.height/26,rect.width*6/7, rect.height*24/26)
+        let rectangle = CGRectMake(rect.width/8,rect.height/26,rect.width*6/8, rect.height*24/26)
         CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
         CGContextAddRect(context, rectangle)
         CGContextFillRect(context, rectangle)
@@ -34,23 +34,23 @@ import UIKit
         CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
         
         //draw top line
-        CGContextMoveToPoint(context, rect.width/14, rect.height/26)
-        CGContextAddLineToPoint(context, rect.width*6.5/7, rect.height/26)
+        CGContextMoveToPoint(context, rect.width/8, rect.height/26)
+        CGContextAddLineToPoint(context, rect.width*7/8, rect.height/26)
         CGContextStrokePath(context)
         
         
         //draw 6 strings
         for stringNum in 1...6 {
             CGContextSetLineWidth(context, 3.0)
-            CGContextMoveToPoint(context, rect.width*CGFloat(stringNum)/7, rect.height/26)
-            CGContextAddLineToPoint(context, rect.width*CGFloat(stringNum)/7, rect.height*25/26)
+            CGContextMoveToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height/26)
+            CGContextAddLineToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height*25/26)
             CGContextStrokePath(context)
         }
         
         //draw 24 frets
         for fretNum in 2...25 {
-            CGContextMoveToPoint(context, rect.width*1/14, rect.height*CGFloat(fretNum)/26)
-            CGContextAddLineToPoint(context, rect.width*6.5/7, rect.height*CGFloat(fretNum)/26)
+            CGContextMoveToPoint(context, rect.width*1/8, rect.height*CGFloat(fretNum)/26)
+            CGContextAddLineToPoint(context, rect.width*7/8, rect.height*CGFloat(fretNum)/26)
             CGContextStrokePath(context)
         }
         
@@ -68,12 +68,17 @@ import UIKit
         
         
         //draw circle with text in center
-        let font: UIFont = UIFont(name: "Helvetica Neue", size: 12)!
-        let circleimage = UIUtility.circleImageWithText(text: "Center text", font: font, circleColor: UIColor.blackColor())
+        let font: UIFont = UIFont(name: "Helvetica Neue", size: 40)!
         
-        CGContextDrawImage(context, rect, circleimage.CGImage)
+        let circleimage = UIUtility.circleImageWithText(text: "A#", font: font, circleColor: UIColor.blackColor())
+        
+        let testRect = CGRectMake(rect.width*1.1/8, rect.height*3.2/26, rect.width*0.8/8, rect.height*0.6/26)
+        //flip image upside-down
+        //CGContextTranslateCTM(context, 0, rect.height);
+        //CGContextScaleCTM(context, 1.0, -1.0);
+        
+        CGContextDrawImage(context, testRect, circleimage.CGImage)
  
-
         
         
         
