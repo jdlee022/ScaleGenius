@@ -70,15 +70,18 @@ import UIKit
         //draw circle with text in center
         let font: UIFont = UIFont(name: "Helvetica Neue", size: 40)!
         
-        let circleimage = UIUtility.circleImageWithText(text: "A#", font: font, circleColor: UIColor.blackColor())
         
-        let testRect = CGRectMake(rect.width*1.1/8, rect.height*3.2/26, rect.width*0.8/8, rect.height*0.6/26)
-        //flip image upside-down
-        //CGContextTranslateCTM(context, 0, rect.height);
-        //CGContextScaleCTM(context, 1.0, -1.0);
-        
-        CGContextDrawImage(context, testRect, circleimage.CGImage)
- 
+        for fret in 1...24 {
+            let noteImage = UIUtility.circleImageWithText(text: "A#", font: font, circleColor: UIColor.blackColor())
+            
+            //height changes based on fret position
+            let testRect = CGRectMake(rect.width*1.1/8, rect.height*CGFloat(Double(fret)+0.2)/26, rect.width*0.8/8, rect.height*0.6/26)
+            //flip the image upside-down and drawInRect
+            UIGraphicsPushContext(context!)
+            noteImage.drawInRect(testRect)
+            UIGraphicsPopContext()
+            
+        }
         
         
         
