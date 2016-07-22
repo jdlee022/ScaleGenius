@@ -10,12 +10,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var fretboardView: FretboardView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         //self.navigationItem.title = "aasbsdf"
         //navigationBar.topItem.title = "some title"
+        self.title = "Key: \(SettingsHelper.Key) | Scale: \(SettingsHelper.Scale)"
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +27,9 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        self.fretboardView.setNeedsDisplay()
+    }
 
     /*
     // MARK: - Navigation

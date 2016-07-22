@@ -208,6 +208,9 @@
                                     <constraint firstItem="6no-rS-8ft" firstAttribute="top" secondItem="POR-px-2E1" secondAttribute="top" id="p2n-bL-7RB"/>
                                     <constraint firstAttribute="bottom" secondItem="6no-rS-8ft" secondAttribute="bottom" id="qr0-hb-h0v"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="cqC-7C-7IQ" id="CVJ-zR-YeM"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -228,6 +231,9 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1500"/>
+                    <connections>
+                        <outlet property="fretboardView" destination="6no-rS-8ft" id="uhr-I2-3mQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKw-6c-0tn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

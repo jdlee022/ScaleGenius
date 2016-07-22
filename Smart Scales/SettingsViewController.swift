@@ -84,7 +84,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         print(SettingsHelper.Scale)
         print("notesToDisplay: \(SettingsHelper.notesToDisplay)")
         print("first string arr: \(SettingsHelper.firstString)")
-        print("third string arr: \(SettingsHelper.thirdString)")
+        print("sixth string arr: \(SettingsHelper.sixthString)")
 
     }
 

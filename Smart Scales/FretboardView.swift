@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-@IBDesignable class FretboardView: UIView {
+@IBDesignable class FretboardView: UIView {    
 
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
@@ -54,27 +53,46 @@ import UIKit
             CGContextStrokePath(context)
         }
         
-        //draw circle
-        CGContextSetLineWidth(context, 2.0)
-        CGContextSetStrokeColorWithColor(context,
-                                         UIColor.blueColor().CGColor)
-        let noteIcon = CGRectMake(rect.width*0.75/7,rect.height*1.25/26,rect.width*0.5/7,rect.height*0.5/26)
-        CGContextAddEllipseInRect(context, noteIcon)
-        CGContextStrokePath(context)
-        
-        
-        
-        
+
         
         
         //draw circle with text in center
         let font: UIFont = UIFont(name: "Helvetica Neue", size: 40)!
-        
+
         for string in 1...6{
-            for fret in 0...23 {
-
-                    let noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: UIColor.blackColor())
-
+            for fret in 0...24 {
+                var noteImage = UIUtility.circleImageWithText(text: "", font: font, circleColor: UIColor.blackColor().colorWithAlphaComponent(0.0))
+                if string == 1{
+                    if SettingsHelper.notesToDisplay.contains(SettingsHelper.sixthString[fret]) || fret == 0 {
+                    noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: UIColor.blackColor())
+                    }
+                }
+                if string == 2{
+                    if SettingsHelper.notesToDisplay.contains(SettingsHelper.fifthString[fret]) || fret == 0 {
+                    noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fifthString[fret], font: font, circleColor: UIColor.blackColor())
+                    }
+                }
+                if string == 3{
+                    if SettingsHelper.notesToDisplay.contains(SettingsHelper.fourthString[fret]) || fret == 0 {
+                    noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fourthString[fret], font: font, circleColor: UIColor.blackColor())
+                    }
+                }
+                if string == 4{
+                    if SettingsHelper.notesToDisplay.contains(SettingsHelper.thirdString[fret]) || fret == 0 {
+                    noteImage = UIUtility.circleImageWithText(text: SettingsHelper.thirdString[fret], font: font, circleColor: UIColor.blackColor())
+                    }
+                }
+                if string == 5{
+                    if SettingsHelper.notesToDisplay.contains(SettingsHelper.secondString[fret]) || fret == 0 {
+                    noteImage = UIUtility.circleImageWithText(text: SettingsHelper.secondString[fret], font: font, circleColor: UIColor.blackColor())
+                    }
+                }
+                if string == 6{
+                    if SettingsHelper.notesToDisplay.contains(SettingsHelper.firstString[fret]) || fret == 0 {
+                    noteImage = UIUtility.circleImageWithText(text: SettingsHelper.firstString[fret], font: font, circleColor: UIColor.blackColor())
+                    }
+                }
+                //else { noteImage = UIUtility.circleImageWithText(text: "error", font: font, circleColor: UIColor.blackColor()) }
                 
                 
                 //height changes based on fret position
@@ -86,10 +104,8 @@ import UIKit
             }
         }
         
-        
-        
-        
     }
+    
     
 
 }

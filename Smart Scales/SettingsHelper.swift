@@ -101,7 +101,7 @@ class SettingsHelper {
     
 
  
-    //************ initialize arrays for all 6 strings (adjusts for tuning) *************
+    /************ initialize arrays for all 6 strings (adjusts for tuning) *************/
     static var sixthString: [String] {
         var toBeReturned = [String](count:25, repeatedValue: "")
         var index = self.TuningIndex[0]
