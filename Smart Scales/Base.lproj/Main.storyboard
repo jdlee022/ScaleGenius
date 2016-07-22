@@ -159,7 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="nS0-35-mC3">
                         <barButtonItem key="backBarButtonItem" title="Done" id="ant-wK-Yw9"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="z7m-Xb-cZE">
+                        <barButtonItem key="rightBarButtonItem" id="z7m-Xb-cZE">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7dA-Jb-VGW">
                                 <rect key="frame" x="509" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

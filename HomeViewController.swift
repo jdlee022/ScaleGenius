@@ -15,11 +15,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        //self.navigationItem.title = "aasbsdf"
-        //navigationBar.topItem.title = "some title"
-        self.title = "Key: \(SettingsHelper.Key) | Scale: \(SettingsHelper.Scale)"
-
+        // Create a multi-line title
+        let label = UILabel(frame: CGRectMake(0, 0, 44, 44))
+        label.backgroundColor = UIColor.clearColor()
+        label.numberOfLines = 2
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
+        self.navigationItem.titleView = label
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +30,15 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        //update fretboard appearance when view loads
         self.fretboardView.setNeedsDisplay()
+        // Create a multi-line title
+        let label = UILabel(frame: CGRectMake(0, 0, 20, 70))
+        label.backgroundColor = UIColor.clearColor()
+        label.numberOfLines = 2
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
+        self.navigationItem.titleView = label
     }
 
     /*

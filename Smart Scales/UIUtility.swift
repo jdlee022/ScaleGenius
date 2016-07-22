@@ -12,8 +12,8 @@ import UIKit
 struct UIUtility {
     
     static func imageWithColor(color: UIColor, circular : Bool) -> UIImage {
-        let size : CGFloat = circular ? 100 : 1;  //???
-        let rect = CGRectMake(0.0, 0.0, size, size) //???
+        let size : CGFloat = circular ? 100 : 1; 
+        let rect = CGRectMake(0.0, 0.0, size, size)
         
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()

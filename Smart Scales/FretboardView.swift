@@ -59,9 +59,17 @@ import UIKit
         //draw circle with text in center
         let font: UIFont = UIFont(name: "Helvetica Neue", size: 40)!
 
-        for string in 1...6{
+        for string in 0...6{
             for fret in 0...24 {
+                //use this transparent default image if the note should not be displayed
                 var noteImage = UIUtility.circleImageWithText(text: "", font: font, circleColor: UIColor.blackColor().colorWithAlphaComponent(0.0))
+                //draw fret numbers with clear background color
+                if string == 0{
+                    if fret != 0 {
+                        noteImage = UIUtility.circleImageWithText(text: String(fret), font: font, circleColor: UIColor.clearColor())
+                    }
+                }
+                //draw notes on strings if they are contained in [notesToDisplay] or if 0th fret
                 if string == 1{
                     if SettingsHelper.notesToDisplay.contains(SettingsHelper.sixthString[fret]) || fret == 0 {
                     noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: UIColor.blackColor())
@@ -92,7 +100,6 @@ import UIKit
                     noteImage = UIUtility.circleImageWithText(text: SettingsHelper.firstString[fret], font: font, circleColor: UIColor.blackColor())
                     }
                 }
-                //else { noteImage = UIUtility.circleImageWithText(text: "error", font: font, circleColor: UIColor.blackColor()) }
                 
                 
                 //height changes based on fret position
@@ -103,7 +110,6 @@ import UIKit
                 UIGraphicsPopContext()
             }
         }
-        
     }
     
     
