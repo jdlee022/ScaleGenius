@@ -13,7 +13,7 @@ class scaleCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var scalePicker: UIPickerView!
     
-    let scaleArr = ["Major", "Major Pentatonic", "Minor"]
+    let scaleArr = ["Major (Ionian)", "Minor (Aeolian)", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Locrian", "Major Pentatonic", "Minor Pentatonic", "Harmonic Minor", "Melodic Minor", "Blues (minor)"]
     var myScale = "Major"
     var myScaleIndex = 0
     

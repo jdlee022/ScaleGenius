@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var fretboardView: FretboardView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class HomeViewController: UIViewController {
         label.textAlignment = NSTextAlignment.Center
         label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
         self.navigationItem.titleView = label
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +43,8 @@ class HomeViewController: UIViewController {
         label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
         self.navigationItem.titleView = label
     }
+    
+    
 
     /*
     // MARK: - Navigation

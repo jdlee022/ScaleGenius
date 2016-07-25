@@ -15,14 +15,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wd7-C3-exR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CpE-g9-ise">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="210" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-sd-BXK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="keyCell" rowHeight="210" id="8sk-oi-rfi" customClass="keyCell" customModule="Smart_Scales" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="keyCell" rowHeight="210" id="8sk-oi-rfi" customClass="keyCell" customModule="Smart_Scales" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="600" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8sk-oi-rfi" id="ukT-Bq-Hht">
@@ -30,9 +30,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqP-o4-taq">
-                                                    <rect key="frame" x="272" y="8" width="320" height="193"/>
+                                                    <rect key="frame" x="392" y="8" width="200" height="193"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="320" id="PRX-ZL-GUp"/>
+                                                        <constraint firstAttribute="width" constant="200" id="PRX-ZL-GUp"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="dataSource" destination="bWI-JK-WDg" id="gcL-S3-Cgo"/>
@@ -54,12 +55,13 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="YvW-rP-WIv" secondAttribute="bottom" constant="71" id="ev2-Mt-at4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95968995418848169" green="0.95968995418848169" blue="0.95968995418848169" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="keyLabel" destination="YvW-rP-WIv" id="xPB-l0-ySO"/>
                                             <outlet property="keyPicker" destination="GqP-o4-taq" id="307-WK-nDs"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleCell" rowHeight="210" id="uxn-04-Yir" customClass="scaleCell" customModule="Smart_Scales" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleCell" rowHeight="210" id="uxn-04-Yir" customClass="scaleCell" customModule="Smart_Scales" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="260" width="600" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uxn-04-Yir" id="4u9-1p-uVh">
@@ -67,9 +69,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-uY-feZ" userLabel="Scale Picker">
-                                                    <rect key="frame" x="272" y="8" width="320" height="193"/>
+                                                    <rect key="frame" x="392" y="8" width="200" height="193"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="320" id="ls5-Fu-KT1"/>
+                                                        <constraint firstAttribute="width" constant="200" id="ls5-Fu-KT1"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="dataSource" destination="bWI-JK-WDg" id="1Qx-jE-qnR"/>
@@ -91,12 +94,13 @@
                                                 <constraint firstItem="JyY-5j-p3t" firstAttribute="leading" secondItem="4u9-1p-uVh" secondAttribute="leadingMargin" id="xy2-Yf-7OF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="scaleLabel" destination="JyY-5j-p3t" id="oUj-ax-yrv"/>
                                             <outlet property="scalePicker" destination="gKa-uY-feZ" id="9of-Ae-Ghy"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tuningCell" rowHeight="220" id="j3e-fd-UH0" customClass="tuningCell" customModule="Smart_Scales" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tuningCell" rowHeight="220" id="j3e-fd-UH0" customClass="tuningCell" customModule="Smart_Scales" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="470" width="600" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j3e-fd-UH0" id="eUr-4B-kXv">
@@ -105,6 +109,7 @@
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P80-hX-Gix" userLabel="Tuning Picker">
                                                     <rect key="frame" x="0.0" y="39" width="600" height="180"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="180" id="abO-5j-2MV"/>
                                                     </constraints>
@@ -112,8 +117,8 @@
                                                         <outlet property="dataSource" destination="bWI-JK-WDg" id="NKJ-px-Y7Q"/>
                                                     </connections>
                                                 </pickerView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-XD-gUB" userLabel="Tuning Label">
-                                                    <rect key="frame" x="279" y="0.0" width="42" height="39"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-XD-gUB" userLabel="Tuning Label">
+                                                    <rect key="frame" x="262" y="0.0" width="76" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -136,6 +141,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="tuningLabel" destination="Vsb-XD-gUB" id="j60-cO-9Ia"/>
                                             <outlet property="tuningPicker" destination="P80-hX-Gix" id="ji3-DN-5Hp"/>
@@ -159,17 +165,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="nS0-35-mC3">
                         <barButtonItem key="backBarButtonItem" title="Done" id="ant-wK-Yw9"/>
-                        <barButtonItem key="rightBarButtonItem" id="z7m-Xb-cZE">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7dA-Jb-VGW">
-                                <rect key="frame" x="509" y="7" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="testButton"/>
-                                <connections>
-                                    <action selector="testButton:" destination="bWI-JK-WDg" eventType="touchUpInside" id="cUY-NA-qeh"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="rMF-sd-BXK" id="vSz-bh-lOv"/>
@@ -177,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cme-nQ-DjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="390"/>
+            <point key="canvasLocation" x="1857" y="811"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="r2z-Cq-Ive">
@@ -188,11 +183,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MAX-RA-h9R"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gW6-Ym-IHe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POR-px-2E1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6no-rS-8ft" customClass="FretboardView" customModule="Smart_Scales" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1500"/>
@@ -228,16 +223,54 @@
                                 <segue destination="bWI-JK-WDg" kind="show" id="8s8-AA-C7C"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Help" id="rRn-Qa-73O">
+                            <connections>
+                                <segue destination="VMJ-KP-dvx" kind="show" id="hzx-3e-x0g"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1500"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="fretboardView" destination="6no-rS-8ft" id="uhr-I2-3mQ"/>
+                        <outlet property="scrollView" destination="POR-px-2E1" id="wkQ-Op-agj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKw-6c-0tn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="390"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="CVz-2F-DU7">
+            <objects>
+                <tableViewController id="VMJ-KP-dvx" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1iZ-tJ-K7y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" id="xSF-Ng-kbi">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xSF-Ng-kbi" id="Cpu-FU-XYP">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VMJ-KP-dvx" id="dOa-FM-FoX"/>
+                            <outlet property="delegate" destination="VMJ-KP-dvx" id="n9z-hd-9dr"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem id="abe-AL-j7z"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbH-pF-3dI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1857" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sdH-Ga-fgJ">

@@ -73,7 +73,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         //add additional code
     }
  
-    
+    /*
     //debugger button (delete later)
     @IBAction func testButton(sender: AnyObject) {
         tableView.reloadData()
@@ -87,6 +87,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         print("sixth string arr: \(SettingsHelper.sixthString)")
 
     }
+ */
 
     
 }

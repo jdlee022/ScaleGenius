@@ -62,7 +62,7 @@ class SettingsHelper {
     static var notesToDisplay: [String] {
         
         //determine notes for MAJOR scale
-        if Scale == "Major"{
+        if Scale == "Major (Ionian)"{
             rootIndex = notesArr.indexOf(Key)!
             secondIndex = (notesArr.indexOf(Key)! + 2) % 12
             thirdIndex = (notesArr.indexOf(Key)! + 4) % 12
@@ -70,6 +70,67 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
+        //determine notes for MINOR scale
+        if Scale == "Minor (Aeolian)" {
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 3) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
+        if Scale == "Dorian"{
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 3) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
+        if Scale == "Phrygian"{
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 1) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 3) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
+        if Scale == "Lydian"{
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 4) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 6) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
+        if Scale == "Mixolydian"{
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 4) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
+        if Scale == "Locrian"{
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 1) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 3) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 6) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
             return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
         }
         //determine notes for MAJOR PENTATONIC scale
@@ -83,18 +144,57 @@ class SettingsHelper {
             //seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
             return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fifthIndex], notesArr[sixthIndex]]
         }
-        //determine notes for MINOR scale
-        if Scale == "Minor" {
+        if Scale == "Minor Pentatonic" {
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 3) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 5) % 12
+            //fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 10) % 12
+            //seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fifthIndex], notesArr[sixthIndex]]
+        }
+        if Scale == "Harmonic Minor" {
             rootIndex = notesArr.indexOf(Key)!
             secondIndex = (notesArr.indexOf(Key)! + 2) % 12
             thirdIndex = (notesArr.indexOf(Key)! + 3) % 12
             fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
-            seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
             return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
         }
-        else { return ["error"] }
+        if Scale == "Melodic Minor" {
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 3) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
+        if Scale == "Blues (minor)" {
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 3) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 6) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 10) % 12
+            //seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex]]
+        }
+            //if no scale was selected (first time app is run) display Major Scale
+        else {
+            rootIndex = notesArr.indexOf(Key)!
+            secondIndex = (notesArr.indexOf(Key)! + 2) % 12
+            thirdIndex = (notesArr.indexOf(Key)! + 4) % 12
+            fourthIndex = (notesArr.indexOf(Key)! + 5) % 12
+            fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
+            sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
+            seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
+            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+        }
         
     }
     
