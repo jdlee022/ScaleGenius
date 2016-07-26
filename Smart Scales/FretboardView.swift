@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable class FretboardView: UIView, OrientationDelegate {
     
     
-
+    var orientationIsLandscape = false
     
     //redraw the view whenever the orientation is changed
     override func layoutSubviews() {
@@ -28,19 +28,6 @@ import UIKit
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        //change height and width depending on orientation
-        if UIDevice.currentDevice().orientation == .Portrait || UIDevice.currentDevice().orientation == .PortraitUpsideDown{
-            print("portrait view")
-            height = rect.height
-            width = rect.width
-        }
-        if UIDevice.currentDevice().orientation == .LandscapeLeft || UIDevice.currentDevice().orientation == .LandscapeRight {
-            print("landscape view")
-            //height = rect.width
-            //width = rect.height
-            height = rect.height
-            width = rect.width
-        }
         
         let context = UIGraphicsGetCurrentContext()
         
@@ -49,7 +36,7 @@ import UIKit
         CGContextFillEllipseInRect(context, rect)
         
         //draw fretboard rectangle
-        let rectangle = CGRectMake(width/8,height/26,width*6/8, height*24/26)
+        let rectangle = CGRectMake(rect.width/8,rect.height/26,rect.width*6/8, rect.height*24/26)
         CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
         CGContextAddRect(context, rectangle)
         CGContextFillRect(context, rectangle)
@@ -89,7 +76,7 @@ import UIKit
             for fret in 0...24 {
                 
                 //Change dimensions to adjust for portrait view
-            if UIDevice.currentDevice().orientation == .LandscapeRight || UIDevice.currentDevice().orientation == .LandscapeLeft{
+            if orientationIsLandscape {
                     //use this transparent default image if the note should not be displayed
                     var noteImage = UIUtility.circleImageWithText(text: "", font: font, circleColor: UIColor.blackColor().colorWithAlphaComponent(0.0))
                     //draw fret numbers with clear background color
@@ -199,7 +186,18 @@ import UIKit
     }
     func orientationChanged() {
         
-        print("orientation changed")
+        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
+        {
+            orientationIsLandscape = true
+            self.setNeedsDisplay()
+
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
+        {
+            orientationIsLandscape = false
+            self.setNeedsDisplay()
+        }
     }
     
     

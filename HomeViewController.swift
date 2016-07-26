@@ -53,16 +53,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
         label.textAlignment = NSTextAlignment.Center
         label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
         self.navigationItem.titleView = label
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged", name: UIDeviceOrientationDidChangeNotification, object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.orientationChanged), name: UIDeviceOrientationDidChangeNotification, object: nil)
+
         
     }
     
-    func orientationChanged(){
+    func orientationChanged()
+    {
         delegate.orientationChanged()
-        print("orientation changed (in homeVC)")
+        
     }
-    
+
     
     //lock in portrait mode
     override func shouldAutorotate() -> Bool {
