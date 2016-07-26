@@ -229,6 +229,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
@@ -272,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="1857" y="139"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="sdH-Ga-fgJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D0q-Eg-jhu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D0q-Eg-jhu" customClass="myNavigationController" customModule="Smart_Scales" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dxG-hc-Hdh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -288,7 +289,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqH-qy-bpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379" y="-60"/>
+            <point key="canvasLocation" x="439" y="390"/>
         </scene>
     </scenes>
 </document>

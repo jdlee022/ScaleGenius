@@ -7,17 +7,24 @@
 //
 
 import UIKit
-@IBDesignable class FretboardView: UIView {
+@IBDesignable class FretboardView: UIView, OrientationDelegate {
+    
+    
+
     
     //redraw the view whenever the orientation is changed
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         self.setNeedsDisplay()
     }
+    
+    
     
     //height and width change depending on orientation
     var height = CGFloat(0)
     var width = CGFloat(0)
+    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
@@ -82,7 +89,7 @@ import UIKit
             for fret in 0...24 {
                 
                 //Change dimensions to adjust for portrait view
-                if UIDevice.currentDevice().orientation == .Portrait || UIDevice.currentDevice().orientation == .PortraitUpsideDown{
+            if UIDevice.currentDevice().orientation == .LandscapeRight || UIDevice.currentDevice().orientation == .LandscapeLeft{
                     //use this transparent default image if the note should not be displayed
                     var noteImage = UIUtility.circleImageWithText(text: "", font: font, circleColor: UIColor.blackColor().colorWithAlphaComponent(0.0))
                     //draw fret numbers with clear background color
@@ -132,8 +139,8 @@ import UIKit
                     UIGraphicsPopContext()
                 }
                 
-                //Change dimensions to account for landscape view
-                if UIDevice.currentDevice().orientation == .LandscapeLeft || UIDevice.currentDevice().orientation == .LandscapeRight{
+                //if not in landscape view then use this code for portrait
+                else {
                     //use this transparent default image if the note should not be displayed
                     var noteImage = UIUtility.circleImageWithText(text: "", font: font, circleColor: UIColor.blackColor().colorWithAlphaComponent(0.0))
                     //draw fret numbers with clear background color
@@ -190,8 +197,12 @@ import UIKit
         
         
     }
-    
+    func orientationChanged() {
+        
+        print("orientation changed")
+    }
     
     
 }
+
 

@@ -54,12 +54,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //give each section a title
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Guitar Display"
+        return "Fretboard Display"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //add additional code
+        self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
+
     }
     
     override func viewWillAppear(animated: Bool) {

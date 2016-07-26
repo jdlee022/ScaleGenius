@@ -19,6 +19,7 @@
 		FCF743591D36AE5A0068903D /* keyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF743581D36AE5A0068903D /* keyCell.swift */; };
 		FCF7435B1D36BCF00068903D /* scaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435A1D36BCF00068903D /* scaleCell.swift */; };
 		FCF7435D1D36BD080068903D /* tuningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435C1D36BD080068903D /* tuningCell.swift */; };
+		FCFA3E161D47D72E0098E379 /* myNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA3E151D47D72E0098E379 /* myNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FCF743581D36AE5A0068903D /* keyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyCell.swift; sourceTree = "<group>"; };
 		FCF7435A1D36BCF00068903D /* scaleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scaleCell.swift; sourceTree = "<group>"; };
 		FCF7435C1D36BD080068903D /* tuningCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tuningCell.swift; sourceTree = "<group>"; };
+		FCFA3E151D47D72E0098E379 /* myNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				FC4DEB0F1D35586900CA5A4E /* AppDelegate.swift */,
 				FC4DEB131D35586A00CA5A4E /* Main.storyboard */,
+				FCFA3E151D47D72E0098E379 /* myNavigationController.swift */,
 				FC5E919A1D3FE4B00008FE54 /* HomeViewController.swift */,
 				FC5E91941D3D7DBF0008FE54 /* FretboardView.swift */,
 				FC5E919C1D4026F90008FE54 /* UIUtility.swift */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5E919D1D4026F90008FE54 /* UIUtility.swift in Sources */,
+				FCFA3E161D47D72E0098E379 /* myNavigationController.swift in Sources */,
 				FC5E91971D3E91490008FE54 /* SettingsHelper.swift in Sources */,
 				FCF7435D1D36BD080068903D /* tuningCell.swift in Sources */,
 				FC4DEB221D356CAE00CA5A4E /* SettingsViewController.swift in Sources */,
