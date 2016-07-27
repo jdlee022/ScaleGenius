@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wd7-C3-exR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CpE-g9-ise">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="210" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-sd-BXK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="keyCell" rowHeight="210" id="8sk-oi-rfi" customClass="keyCell" customModule="Smart_Scales" customModuleProvider="target">
@@ -147,6 +147,28 @@
                                             <outlet property="tuningPicker" destination="P80-hX-Gix" id="ji3-DN-5Hp"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rootCell" rowHeight="50" id="GXN-j0-AXq" customClass="rootCell">
+                                        <rect key="frame" x="0.0" y="690" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXN-j0-AXq" id="E80-bo-gA4">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Root Highlighted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYa-9K-iiF">
+                                                    <rect key="frame" x="8" y="14" width="136" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tYa-9K-iiF" firstAttribute="leading" secondItem="E80-bo-gA4" secondAttribute="leadingMargin" id="6VV-My-ca4"/>
+                                                <constraint firstItem="tYa-9K-iiF" firstAttribute="top" secondItem="E80-bo-gA4" secondAttribute="topMargin" constant="6" id="g1I-49-7K9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tYa-9K-iiF" secondAttribute="bottom" constant="6" id="ha7-b6-c2T"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
                                 </prototypes>
                                 <sections/>
                                 <connections>
@@ -166,6 +188,8 @@
                     <navigationItem key="navigationItem" title="Settings" id="nS0-35-mC3">
                         <barButtonItem key="backBarButtonItem" title="Done" id="ant-wK-Yw9"/>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="tableView" destination="rMF-sd-BXK" id="vSz-bh-lOv"/>
                     </connections>

@@ -12,50 +12,94 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
+    let intervals = ["root", "2nd", "3rd", "4th", "5th", "6th", "7th"]
+    
+    //number of sections
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    //give each section a title
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Fretboard Display"
+        }
+        else {
+            return "Highlighted Notes"
+        }
+    }
     
     //how many rows for each section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if section == 0{
+            return 3
+        }
+        else {
+            return intervals.count
+        }
+    }
+    
+    //set the height for the cells depending on the section
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if(indexPath.section == 0) {
+            return 210
+        }
+        // "Else"
+        return 50
     }
     
     //contents of each cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //set contents of  keyCell
-        if indexPath.row == 0 {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("keyCell", forIndexPath: indexPath) as! keyCell
-            cell.keyLabel.text = "Key"
-            cell.updateKey()
-            return cell
-        }
-        
-        //set contents of scaleCell
-        if indexPath.row == 1 {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("scaleCell", forIndexPath: indexPath) as! scaleCell
-            cell.scaleLabel.text = "Scale"
-            cell.updateScale()
-            return cell
+        //create cells for first section using custom cell classes
+        if indexPath.section == 0 {
+            //set contents of  keyCell
+            if indexPath.row == 0 {
+                let cell = self.tableView.dequeueReusableCellWithIdentifier("keyCell", forIndexPath: indexPath) as! keyCell
+                cell.keyLabel.text = "Key"
+                cell.updateKey()
+                return cell
+            }
+            
+            //set contents of scaleCell
+            if indexPath.row == 1 {
+                let cell = self.tableView.dequeueReusableCellWithIdentifier("scaleCell", forIndexPath: indexPath) as! scaleCell
+                cell.scaleLabel.text = "Scale"
+                cell.updateScale()
+                return cell
+            }
+                
+                
+                //set contents of tuningCell
+            else{
+                let cell = self.tableView.dequeueReusableCellWithIdentifier("tuningCell", forIndexPath: indexPath) as! tuningCell
+                cell.tuningLabel.text = "Tuning"
+                cell.updateTuning()
+                return cell
+            }
         }
             
-        //set contents of tuningCell
-        else{
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("tuningCell", forIndexPath: indexPath) as! tuningCell
-            cell.tuningLabel.text = "Tuning"
-            cell.updateTuning()
+        //create cells for second section based on [intervals]
+        else {
+            let cell = UITableViewCell()
+            cell.textLabel?.text = intervals[indexPath.row]
             return cell
+            
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            cell.accessoryType = .None
+        }
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            cell.accessoryType = .Checkmark
         }
     }
     
-    
-    //number of sections
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    //give each section a title
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Fretboard Display"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
