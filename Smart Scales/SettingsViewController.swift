@@ -37,7 +37,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         }
             
-            //set contents of tuningCell
+        //set contents of tuningCell
         else{
             let cell = self.tableView.dequeueReusableCellWithIdentifier("tuningCell", forIndexPath: indexPath) as! tuningCell
             cell.tuningLabel.text = "Tuning"
@@ -61,7 +61,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         //add additional code
         self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
-
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -74,22 +74,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         //add additional code
     }
- 
-    /*
-    //debugger button (delete later)
-    @IBAction func testButton(sender: AnyObject) {
-        tableView.reloadData()
-        //computeNotesToDisplay()
-        //print(notesToDisplay)
-        print("SETTINGSHELPER VALUES:")
-        print(SettingsHelper.Key)
-        print(SettingsHelper.Scale)
-        print("notesToDisplay: \(SettingsHelper.notesToDisplay)")
-        print("first string arr: \(SettingsHelper.firstString)")
-        print("sixth string arr: \(SettingsHelper.sixthString)")
-
-    }
- */
-
+    
     
 }

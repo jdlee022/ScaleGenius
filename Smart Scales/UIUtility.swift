@@ -41,6 +41,8 @@ struct UIUtility {
         let rect = CGRectMake(point.x, point.y, image.size.width, image.size.height)
         text.drawInRect(CGRectIntegral(rect), withAttributes: [ NSFontAttributeName: font, NSForegroundColorAttributeName : textColor ])
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        
         UIGraphicsEndImageContext()
         return newImage
     }
@@ -50,6 +52,7 @@ struct UIUtility {
         let textSize = NSString(string: text).sizeWithAttributes([ NSFontAttributeName: font])
         let centerX = (image.size.width / 2.0) - (textSize.width / 2.0)
         let centerY = (image.size.height / 2.0) - (textSize.height / 2.0)
+
         let middlePoint = CGPointMake(centerX, centerY)
         
         return UIUtility.drawText(text, font: font, image: image, point: middlePoint)
