@@ -58,8 +58,18 @@ class SettingsHelper {
         
     }
     
+    //retrieve array with checked rows from NSUserDefaults
+    static var CheckedRows: [Int] {
+        if let getArr = NSUserDefaults.standardUserDefaults().objectForKey("myCheckedArr") as? [Int] {
+            return getArr
+        }
+        else { return [0] }
+    }
     
-    static var notesToDisplay: [String] {
+    
+    
+    
+    static var notesToDisplay: [(String, Int)] {
         
         //determine notes for MAJOR scale
         if Scale == "Major (Ionian)"{
@@ -70,7 +80,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         //determine notes for MINOR scale
         if Scale == "Minor (Aeolian)" {
@@ -81,7 +91,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         if Scale == "Dorian"{
             rootIndex = notesArr.indexOf(Key)!
@@ -91,7 +101,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         if Scale == "Phrygian"{
             rootIndex = notesArr.indexOf(Key)!
@@ -101,7 +111,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         if Scale == "Lydian"{
             rootIndex = notesArr.indexOf(Key)!
@@ -111,7 +121,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         if Scale == "Mixolydian"{
             rootIndex = notesArr.indexOf(Key)!
@@ -121,7 +131,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         if Scale == "Locrian"{
             rootIndex = notesArr.indexOf(Key)!
@@ -131,7 +141,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 6) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         //determine notes for MAJOR PENTATONIC scale
         if Scale == "Major Pentatonic" {
@@ -142,7 +152,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             //seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fifthIndex], notesArr[sixthIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5)]
         }
         if Scale == "Minor Pentatonic" {
             rootIndex = notesArr.indexOf(Key)!
@@ -152,7 +162,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 10) % 12
             //seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fifthIndex], notesArr[sixthIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5)]
         }
         if Scale == "Harmonic Minor" {
             rootIndex = notesArr.indexOf(Key)!
@@ -162,7 +172,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 8) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         if Scale == "Melodic Minor" {
             rootIndex = notesArr.indexOf(Key)!
@@ -172,7 +182,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         if Scale == "Blues (minor)" {
             rootIndex = notesArr.indexOf(Key)!
@@ -182,7 +192,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 10) % 12
             //seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5)]
         }
             //if no scale was selected (first time app is run) display Major Scale
         else {
@@ -193,7 +203,7 @@ class SettingsHelper {
             fifthIndex = (notesArr.indexOf(Key)! + 7) % 12
             sixthIndex = (notesArr.indexOf(Key)! + 9) % 12
             seventhIndex = (notesArr.indexOf(Key)! + 11) % 12
-            return [notesArr[rootIndex], notesArr[secondIndex], notesArr[thirdIndex], notesArr[fourthIndex], notesArr[fifthIndex], notesArr[sixthIndex], notesArr[seventhIndex]]
+            return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5), (notesArr[seventhIndex], 6)]
         }
         
     }

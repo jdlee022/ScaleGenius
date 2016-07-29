@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     let intervals = ["root", "2nd", "3rd", "4th", "5th", "6th", "7th"]
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     
     //number of sections
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -82,24 +84,61 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         //create cells for second section based on [intervals]
         else {
             let cell = UITableViewCell()
-            cell.textLabel?.text = intervals[indexPath.row]
-            return cell
+            if indexPath.row == 3 || indexPath.row == 6 {
+                cell.textLabel?.text = "\(intervals[indexPath.row])   (N/A for Pentatonic)"
+            }
+            else { cell.textLabel?.text = intervals[indexPath.row] }
             
+            cell.selectionStyle = .None
+            
+            //get array of checked rows from NSUserDefaults and set accessory type
+            var checkedArr: [Int] {
+                if let getArr = defaults.objectForKey("myCheckedArr") as? [Int] {
+                    return getArr
+                }
+                else { return [0] }
+            }
+            if checkedArr.contains(indexPath.row) {
+                cell.accessoryType = .Checkmark
+            }
+            else { cell.accessoryType = .None }
+            
+            
+            return cell
         }
         
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            cell.accessoryType = .None
-        }
-    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            cell.accessoryType = .Checkmark
-        }
-    }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            //get current cell
+            let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
+           
+            //create new array that can be mutated
+            var newcheckedArr = SettingsHelper.CheckedRows
+            
+            //append or remove row depending on whether it's already checked (in the array) change the accessoryType of current item and save the new array
+            if SettingsHelper.CheckedRows.contains(indexPath.row) {
+                newcheckedArr.removeAtIndex(newcheckedArr.indexOf(indexPath.row)!)
+                selectedCell?.accessoryType = .None
+                NSUserDefaults.standardUserDefaults().setObject(newcheckedArr, forKey: "myCheckedArr")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                print(newcheckedArr)
+                print("SettingsHelper: \(SettingsHelper.CheckedRows)")
+            }
+            else {
+                newcheckedArr.append(indexPath.row)
+                selectedCell?.accessoryType = .Checkmark
+                NSUserDefaults.standardUserDefaults().setObject(newcheckedArr, forKey: "myCheckedArr")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                print(newcheckedArr)
+                print("SettingsHelper: \(SettingsHelper.CheckedRows)")
+            }
+            
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
