@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             return "Fretboard Display"
         }
         else {
-            return "Highlighted Notes"
+            return "Highlighted Intervals"
         }
     }
     
@@ -124,16 +124,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 selectedCell?.accessoryType = .None
                 NSUserDefaults.standardUserDefaults().setObject(newcheckedArr, forKey: "myCheckedArr")
                 NSUserDefaults.standardUserDefaults().synchronize()
-                print(newcheckedArr)
-                print("SettingsHelper: \(SettingsHelper.CheckedRows)")
             }
             else {
                 newcheckedArr.append(indexPath.row)
                 selectedCell?.accessoryType = .Checkmark
                 NSUserDefaults.standardUserDefaults().setObject(newcheckedArr, forKey: "myCheckedArr")
                 NSUserDefaults.standardUserDefaults().synchronize()
-                print(newcheckedArr)
-                print("SettingsHelper: \(SettingsHelper.CheckedRows)")
             }
             
         }

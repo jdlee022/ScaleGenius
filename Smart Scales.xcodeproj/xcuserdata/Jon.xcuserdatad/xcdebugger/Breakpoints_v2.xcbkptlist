@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smart Scales/FretboardView.swift"
-            timestampString = "491518136.945175"
+            timestampString = "491628351.111903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "drawRect(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -185,11 +185,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smart Scales/FretboardView.swift"
-            timestampString = "491518136.945175"
+            timestampString = "491628351.111903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "orientationChanged()"
             landmarkType = "5">
             <Locations>

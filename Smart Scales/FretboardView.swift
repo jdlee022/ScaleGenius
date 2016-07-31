@@ -12,7 +12,7 @@ import UIKit
     
     var currentOrientation = "portrait"
     
-    let intervalColor = [UIColor.blueColor(), UIColor.purpleColor(), UIColor(red: 180/255, green: 30/255, blue: 35/255, alpha: 1), UIColor(red: 230/255, green: 175/255, blue: 40/255, alpha: 1), UIColor(red: 11/255, green: 90/255, blue: 11/255, alpha: 1), UIColor(red: 25/255, green: 75/255, blue: 80/255, alpha: 1), UIColor.brownColor()]
+    let intervalColor = [UIColor(red: 140/255, green: 38/255, blue: 170/255, alpha: 1), UIColor(red: 50/255, green: 80/255, blue: 205/255, alpha: 1), UIColor(red: 50/255, green: 123/255, blue: 142/255, alpha: 1), UIColor(red: 60/255, green: 205/255, blue: 115/255, alpha: 1), UIColor(red: 234/255, green: 188/255, blue: 0/255, alpha: 1), UIColor(red: 220/255, green: 143/255, blue: 91/255, alpha: 1), UIColor(red: 201/255, green: 80/255, blue: 115/255, alpha: 1)]
     
     //redraw the view whenever the orientation is changed
     override func layoutSubviews() {
@@ -49,8 +49,8 @@ import UIKit
         CGContextStrokePath(context)
         
         //draw aboveNut rectangle
-        let aboveNutRect = CGRectMake(rect.width/8,7,rect.width*6/8, rect.height/26 - 7)
-        CGContextSetFillColorWithColor(context, UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1).CGColor)
+        let aboveNutRect = CGRectMake(rect.width/8,0,rect.width*6/8, rect.height/26)
+        CGContextSetFillColorWithColor(context, UIColor(red: 175/255, green: 121/255, blue: 75/255, alpha: 1).CGColor)
         CGContextAddRect(context, aboveNutRect)
         CGContextFillRect(context, aboveNutRect)
         CGContextStrokePath(context)
@@ -65,15 +65,6 @@ import UIKit
         CGContextAddLineToPoint(context, rect.width*7/8, rect.height/26)
         CGContextStrokePath(context)
         
-        
-        //draw 6 strings
-        for stringNum in 1...6 {
-            CGContextSetLineWidth(context, CGFloat(Double((6-stringNum))/2 + 3))
-            CGContextMoveToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height/26)
-            CGContextAddLineToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height*25/26)
-            CGContextStrokePath(context)
-        }
-        
         //draw 24 frets
         CGContextSetLineWidth(context, 4)
         CGContextSetStrokeColorWithColor(context, UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1).CGColor)
@@ -83,12 +74,21 @@ import UIKit
             CGContextStrokePath(context)
         }
         CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
+        
+        //draw 6 strings
+        for stringNum in 1...6 {
+            CGContextSetLineWidth(context, CGFloat(Double((6-stringNum))/2 + 3))
+            CGContextMoveToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height/26)
+            CGContextAddLineToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height*25/26)
+            CGContextStrokePath(context)
+        }
+
 
         
         
         
         /***** DRAW NOTE ICONS *****/
-        let font: UIFont = UIFont(name: "Helvetica Neue", size: 40)!
+        let font: UIFont = UIFont(name: "Helvetica-Bold", size: 46)!
         
         for string in 0...6{
             for fret in 0...24 {
@@ -104,32 +104,57 @@ import UIKit
                 }
                 //draw notes on strings if they are contained in [notesToDisplay] or if 0th fret
                 if string == 1{
-                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.sixthString[fret]) || fret == 0 {
+                    //draw the text for the string above the nut regardless of notesToDisplay contents
+                    if fret == 0 {
+                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: UIColor.clearColor())
+
+                    }
+                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.sixthString[fret]) {
                         noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: getColorForNote(SettingsHelper.sixthString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 2{
-                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.fifthString[fret]) || fret == 0 {
+                    if fret == 0 {
+                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fifthString[fret], font: font, circleColor: UIColor.clearColor())
+                        
+                    }
+                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.fifthString[fret]) {
                         noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fifthString[fret], font: font, circleColor: getColorForNote(SettingsHelper.fifthString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 3{
-                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.fourthString[fret]) || fret == 0 {
+                    if fret == 0 {
+                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fourthString[fret], font: font, circleColor: UIColor.clearColor())
+                        
+                    }
+                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.fourthString[fret]) {
                         noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fourthString[fret], font: font, circleColor: getColorForNote(SettingsHelper.fourthString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 4{
-                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.thirdString[fret]) || fret == 0 {
+                    if fret == 0 {
+                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.thirdString[fret], font: font, circleColor: UIColor.clearColor())
+                        
+                    }
+                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.thirdString[fret]) {
                         noteImage = UIUtility.circleImageWithText(text: SettingsHelper.thirdString[fret], font: font, circleColor: getColorForNote(SettingsHelper.thirdString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 5{
-                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.secondString[fret]) || fret == 0 {
+                    if fret == 0 {
+                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.secondString[fret], font: font, circleColor: UIColor.clearColor())
+                        
+                    }
+                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.secondString[fret]) {
                         noteImage = UIUtility.circleImageWithText(text: SettingsHelper.secondString[fret], font: font, circleColor: getColorForNote(SettingsHelper.secondString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 6{
-                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.firstString[fret]) || fret == 0 {
+                    if fret == 0 {
+                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.firstString[fret], font: font, circleColor: UIColor.clearColor())
+                        
+                    }
+                    if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.firstString[fret]) {
                         noteImage = UIUtility.circleImageWithText(text: SettingsHelper.firstString[fret], font: font, circleColor: getColorForNote(SettingsHelper.firstString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
@@ -214,7 +239,9 @@ import UIKit
     
     //check if a tuple array contains a tuple with a given String
     func tupleContainsString(a:[(String, Int)], note:String) -> Bool {
-        for (v1, v2) in a { if v1 == note { return true } }
+        
+        for (v1, _) in a { if v1 == note { return true } }
+        
         return false
     }
 

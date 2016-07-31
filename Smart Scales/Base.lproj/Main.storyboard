@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D0q-Eg-jhu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D0q-Eg-jhu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wd7-C3-exR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CpE-g9-ise">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="210" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-sd-BXK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="keyCell" rowHeight="210" id="8sk-oi-rfi" customClass="keyCell" customModule="Smart_Scales" customModuleProvider="target">
@@ -55,7 +55,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="YvW-rP-WIv" secondAttribute="bottom" constant="71" id="ev2-Mt-at4"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.95968995418848169" green="0.95968995418848169" blue="0.95968995418848169" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.9339618782722513" green="0.9339618782722513" blue="0.9339618782722513" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="keyLabel" destination="YvW-rP-WIv" id="xPB-l0-ySO"/>
                                             <outlet property="keyPicker" destination="GqP-o4-taq" id="307-WK-nDs"/>
@@ -85,6 +85,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="JyY-5j-p3t" secondAttribute="bottom" constant="71" id="d3b-ak-rxl"/>
                                                 <constraint firstItem="gKa-uY-feZ" firstAttribute="bottom" secondItem="4u9-1p-uVh" secondAttribute="bottomMargin" id="oGo-4T-Y9v"/>
@@ -94,7 +95,7 @@
                                                 <constraint firstItem="JyY-5j-p3t" firstAttribute="leading" secondItem="4u9-1p-uVh" secondAttribute="leadingMargin" id="xy2-Yf-7OF"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="scaleLabel" destination="JyY-5j-p3t" id="oUj-ax-yrv"/>
                                             <outlet property="scalePicker" destination="gKa-uY-feZ" id="9of-Ae-Ghy"/>
@@ -124,6 +125,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Vsb-XD-gUB" firstAttribute="top" secondItem="eUr-4B-kXv" secondAttribute="top" id="5yR-l5-vnW"/>
                                                 <constraint firstItem="Vsb-XD-gUB" firstAttribute="centerX" secondItem="eUr-4B-kXv" secondAttribute="centerX" id="Ema-La-aGt"/>
@@ -141,7 +143,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="tuningLabel" destination="Vsb-XD-gUB" id="j60-cO-9Ia"/>
                                             <outlet property="tuningPicker" destination="P80-hX-Gix" id="ji3-DN-5Hp"/>
@@ -167,7 +169,7 @@
                         <barButtonItem key="backBarButtonItem" title="Done" id="ant-wK-Yw9"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1200"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="tableView" destination="rMF-sd-BXK" id="vSz-bh-lOv"/>
                     </connections>
@@ -273,7 +275,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbH-pF-3dI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="139"/>
+            <point key="canvasLocation" x="1835" y="146"/>
         </scene>
         <!--My Navigation Controller-->
         <scene sceneID="sdH-Ga-fgJ">
