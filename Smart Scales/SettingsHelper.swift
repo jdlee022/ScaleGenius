@@ -33,6 +33,16 @@ class SettingsHelper {
 
     
     //Retrieve values from NSUserDefaults
+    static var switchState: String {
+        
+        // get value from NSUserDefaults
+        if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("switchState") {
+            return myLoadedString
+        }
+        else { return "On" }
+    }
+    
+    //Retrieve values from NSUserDefaults
     static var Key: String {
         
         // save Key with NSUserDefault
@@ -41,6 +51,8 @@ class SettingsHelper {
         }
         else { return "C" }
     }
+    
+    // get value from NSUserDefaults
     static var Scale: String {
         // save myScale with NSUserDefault
         if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("ScaleString") {

@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //number of sections
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     //give each section a title
@@ -26,9 +26,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         if section == 0 {
             return "Fretboard Display"
         }
-        else {
+        if section == 1 {
             return "Highlighted Intervals"
         }
+        else { return "Prevent Screen From Turning Off" }
     }
     
     //how many rows for each section
@@ -36,9 +37,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         if section == 0{
             return 3
         }
-        else {
+        if section == 1 {
             return intervals.count
         }
+        else { return 1 }
     }
     
     //set the height for the cells depending on the section
@@ -82,7 +84,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
             
         //create cells for second section based on [intervals]
-        else {
+        if indexPath.section == 1 {
             let cell = UITableViewCell()
             if indexPath.row == 3 || indexPath.row == 6 {
                 cell.textLabel?.text = "\(intervals[indexPath.row])   (N/A for Pentatonic)"
@@ -102,6 +104,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 cell.accessoryType = .Checkmark
             }
             else { cell.accessoryType = .None }
+            
+            
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("autoLockCell", forIndexPath: indexPath) as UITableViewCell
             
             
             return cell

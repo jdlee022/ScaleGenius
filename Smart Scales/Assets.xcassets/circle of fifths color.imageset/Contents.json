@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "fretboard24.png",
+      "filename" : "circle of fifths color.jpeg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fretboard24@2x.png",
+      "filename" : "circle of fifths color@2x.jpeg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fretboard24@3x.png",
+      "filename" : "circle of fifths color@3x.jpeg",
       "scale" : "3x"
     }
   ],

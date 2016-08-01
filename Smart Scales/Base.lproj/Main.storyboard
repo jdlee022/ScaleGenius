@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wd7-C3-exR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CpE-g9-ise">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="210" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-sd-BXK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="keyCell" rowHeight="210" id="8sk-oi-rfi" customClass="keyCell" customModule="Smart_Scales" customModuleProvider="target">
@@ -149,6 +149,40 @@
                                             <outlet property="tuningPicker" destination="P80-hX-Gix" id="ji3-DN-5Hp"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="autoLockCell" rowHeight="50" id="2GU-cb-i4M" customClass="autoLockCell" customModule="Smart_Scales" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="690" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2GU-cb-i4M" id="tkk-7K-b6O">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disable Auto-Lock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBY-4w-Kd7">
+                                                    <rect key="frame" x="8" y="14" width="141" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-bD-4Od">
+                                                    <rect key="frame" x="543" y="9" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleAutolock:" destination="2GU-cb-i4M" eventType="valueChanged" id="3iB-AW-xFf"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="oBY-4w-Kd7" firstAttribute="leading" secondItem="tkk-7K-b6O" secondAttribute="leading" constant="8" id="03y-rh-ZBL"/>
+                                                <constraint firstAttribute="bottom" secondItem="oBY-4w-Kd7" secondAttribute="bottom" constant="14" id="KW5-iV-8qR"/>
+                                                <constraint firstAttribute="trailing" secondItem="qY9-bD-4Od" secondAttribute="trailing" constant="8" id="kKc-29-4pk"/>
+                                                <constraint firstItem="qY9-bD-4Od" firstAttribute="centerY" secondItem="tkk-7K-b6O" secondAttribute="centerY" id="yBk-Hm-Fc3"/>
+                                                <constraint firstItem="oBY-4w-Kd7" firstAttribute="top" secondItem="tkk-7K-b6O" secondAttribute="top" constant="14" id="yas-4R-Amm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="mySwitch" destination="qY9-bD-4Od" id="Hw7-wr-xpe"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <sections/>
                                 <connections>
@@ -169,7 +203,7 @@
                         <barButtonItem key="backBarButtonItem" title="Done" id="ant-wK-Yw9"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="tableView" destination="rMF-sd-BXK" id="vSz-bh-lOv"/>
                     </connections>
@@ -245,21 +279,48 @@
             </objects>
             <point key="canvasLocation" x="1124" y="390"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Help View Controller-->
         <scene sceneID="CVz-2F-DU7">
             <objects>
-                <tableViewController id="VMJ-KP-dvx" sceneMemberID="viewController">
+                <tableViewController id="VMJ-KP-dvx" customClass="HelpViewController" customModule="Smart_Scales" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1iZ-tJ-K7y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" id="xSF-Ng-kbi">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="100" id="xSF-Ng-kbi">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xSF-Ng-kbi" id="Cpu-FU-XYP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The key and scale name are d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY3-l2-uwT">
+                                            <rect key="frame" x="68" y="8" width="380" height="83"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COFCell" rowHeight="400" id="aNL-Ip-jmN">
+                                <rect key="frame" x="0.0" y="192" width="600" height="400"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNL-Ip-jmN" id="rzZ-9s-wTh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="399"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circle of fifths color" translatesAutoresizingMaskIntoConstraints="NO" id="ePU-L4-Yzo">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ePU-L4-Yzo" firstAttribute="top" secondItem="rzZ-9s-wTh" secondAttribute="top" id="BTc-Zp-qvL"/>
+                                        <constraint firstItem="ePU-L4-Yzo" firstAttribute="leading" secondItem="rzZ-9s-wTh" secondAttribute="leading" id="Hec-rd-5Sq"/>
+                                        <constraint firstAttribute="trailing" secondItem="ePU-L4-Yzo" secondAttribute="trailing" id="Nkt-B0-bE2"/>
+                                        <constraint firstAttribute="bottom" secondItem="ePU-L4-Yzo" secondAttribute="bottom" id="TIN-Mn-hmv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -272,6 +333,9 @@
                         <barButtonItem id="abe-AL-j7z"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="1iZ-tJ-K7y" id="CQI-3q-Ajc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbH-pF-3dI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,4 +360,7 @@
             <point key="canvasLocation" x="439" y="390"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle of fifths color" width="170" height="170"/>
+    </resources>
 </document>

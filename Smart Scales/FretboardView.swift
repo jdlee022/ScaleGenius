@@ -42,7 +42,7 @@ import UIKit
         CGContextFillEllipseInRect(context, rect)
         
         //draw fretboard rectangle
-        let fretboardRect = CGRectMake(rect.width/8,rect.height/26,rect.width*6/8, rect.height*24/26)
+        let fretboardRect = CGRectMake(rect.width/8,rect.height/26,rect.width*6/8, rect.height*25/26)
         CGContextSetFillColorWithColor(context, UIColor(red: 255/255, green: 255/255, blue: 215/255, alpha: 1).CGColor)
         CGContextAddRect(context, fretboardRect)
         CGContextFillRect(context, fretboardRect)
@@ -61,16 +61,16 @@ import UIKit
         CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
         
         //draw top line (nut of fretboard)
-        CGContextMoveToPoint(context, rect.width/8, rect.height/26)
-        CGContextAddLineToPoint(context, rect.width*7/8, rect.height/26)
+        CGContextMoveToPoint(context, rect.width/8, rect.height/25)
+        CGContextAddLineToPoint(context, rect.width*7/8, rect.height/25)
         CGContextStrokePath(context)
         
         //draw 24 frets
         CGContextSetLineWidth(context, 4)
         CGContextSetStrokeColorWithColor(context, UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1).CGColor)
         for fretNum in 2...25 {
-            CGContextMoveToPoint(context, rect.width*1/8, rect.height*CGFloat(fretNum)/26)
-            CGContextAddLineToPoint(context, rect.width*7/8, rect.height*CGFloat(fretNum)/26)
+            CGContextMoveToPoint(context, rect.width*1/8, rect.height*CGFloat(fretNum)/25)
+            CGContextAddLineToPoint(context, rect.width*7/8, rect.height*CGFloat(fretNum)/25)
             CGContextStrokePath(context)
         }
         CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
@@ -78,8 +78,8 @@ import UIKit
         //draw 6 strings
         for stringNum in 1...6 {
             CGContextSetLineWidth(context, CGFloat(Double((6-stringNum))/2 + 3))
-            CGContextMoveToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height/26)
-            CGContextAddLineToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height*25/26)
+            CGContextMoveToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height/25)
+            CGContextAddLineToPoint(context, rect.width*CGFloat(Double(stringNum)+0.5)/8, rect.height*25/25)
             CGContextStrokePath(context)
         }
 
@@ -166,15 +166,15 @@ import UIKit
                     CGContextSaveGState(context);
                     
                     let halfWidth = CGFloat(rect.width*0.8/8 / 2.0)
-                    let halfHeight = CGFloat(rect.height*0.6/26 / 2.0)
-                    let center = CGPointMake(rect.width*CGFloat(Double(string)+0.1)/8 + halfWidth, rect.height*CGFloat(Double(fret)+0.2)/26 + halfHeight)
+                    let halfHeight = CGFloat(rect.height*0.6/25 / 2.0)
+                    let center = CGPointMake(rect.width*CGFloat(Double(string)+0.1)/8 + halfWidth, rect.height*CGFloat(Double(fret)+0.2)/25 + halfHeight)
                     
                     // Move to the center of the rectangle:
                     CGContextTranslateCTM(context, center.x, center.y)
                     // Rotate:
                     CGContextRotateCTM(context, 1.5708)
                     // Draw the rectangle centered about the center:
-                    let rect = CGRectMake(-halfWidth, -halfHeight, rect.width*0.8/8, rect.height*0.6/26)
+                    let rect = CGRectMake(-halfWidth, -halfHeight, rect.width*0.8/8, rect.height*0.6/25)
                     CGContextAddRect(context, rect)
                     noteImage.drawInRect(rect)
                     CGContextRestoreGState(context)
@@ -184,15 +184,15 @@ import UIKit
                     CGContextSaveGState(context);
                     
                     let halfWidth = CGFloat(rect.width*0.8/8 / 2.0)
-                    let halfHeight = CGFloat(rect.height*0.6/26 / 2.0)
-                    let center = CGPointMake(rect.width*CGFloat(Double(string)+0.1)/8 + halfWidth, rect.height*CGFloat(Double(fret)+0.2)/26 + halfHeight)
+                    let halfHeight = CGFloat(rect.height*0.6/25 / 2.0)
+                    let center = CGPointMake(rect.width*CGFloat(Double(string)+0.1)/8 + halfWidth, rect.height*CGFloat(Double(fret)+0.2)/25 + halfHeight)
                     
                     // Move to the center of the rectangle:
                     CGContextTranslateCTM(context, center.x, center.y)
                     // Rotate:
                     CGContextRotateCTM(context, 1.5708*3)
                     // Draw the rectangle centered about the center:
-                    let rect = CGRectMake(-halfWidth, -halfHeight, rect.width*0.8/8, rect.height*0.6/26)
+                    let rect = CGRectMake(-halfWidth, -halfHeight, rect.width*0.8/8, rect.height*0.6/25)
                     CGContextAddRect(context, rect)
                     noteImage.drawInRect(rect)
                     CGContextRestoreGState(context)
@@ -200,7 +200,7 @@ import UIKit
                 }
                 if (currentOrientation == "portrait") {
                     //height changes based on fret position
-                    let testRect = CGRectMake(rect.width*CGFloat(Double(string)+0.1)/8, rect.height*CGFloat(Double(fret)+0.2)/26, rect.width*0.8/8, rect.height*0.6/26)
+                    let testRect = CGRectMake(rect.width*CGFloat(Double(string)+0.1)/8, rect.height*CGFloat(Double(fret)+0.2)/25, rect.width*0.8/8, rect.height*0.6/25)
                     //flip the image upside-down and drawInRect
                     UIGraphicsPushContext(context!)
                     noteImage.drawInRect(testRect)

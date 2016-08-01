@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC130E371D4DACD800C71A9D /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC130E361D4DACD800C71A9D /* HelpViewController.swift */; };
+		FC130E3A1D4FC45A00C71A9D /* autoLockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC130E391D4FC45A00C71A9D /* autoLockCell.swift */; };
 		FC4DEB101D35586900CA5A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DEB0F1D35586900CA5A4E /* AppDelegate.swift */; };
 		FC4DEB151D35586A00CA5A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4DEB131D35586A00CA5A4E /* Main.storyboard */; };
 		FC4DEB171D35586A00CA5A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4DEB161D35586A00CA5A4E /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC130E361D4DACD800C71A9D /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		FC130E391D4FC45A00C71A9D /* autoLockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoLockCell.swift; sourceTree = "<group>"; };
 		FC4DEB0C1D35586900CA5A4E /* Smart Scales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Scales.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4DEB0F1D35586900CA5A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC4DEB141D35586A00CA5A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC130E381D4DACEC00C71A9D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCFA3E151D47D72E0098E379 /* myNavigationController.swift */,
+				FC5E919A1D3FE4B00008FE54 /* HomeViewController.swift */,
+				FC4DEB211D356CAE00CA5A4E /* SettingsViewController.swift */,
+				FC130E361D4DACD800C71A9D /* HelpViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FC4DEB031D35586900CA5A4E = {
 			isa = PBXGroup;
 			children = (
@@ -72,13 +87,11 @@
 			children = (
 				FC4DEB0F1D35586900CA5A4E /* AppDelegate.swift */,
 				FC4DEB131D35586A00CA5A4E /* Main.storyboard */,
-				FCFA3E151D47D72E0098E379 /* myNavigationController.swift */,
-				FC5E919A1D3FE4B00008FE54 /* HomeViewController.swift */,
 				FC5E91941D3D7DBF0008FE54 /* FretboardView.swift */,
 				FC5E919C1D4026F90008FE54 /* UIUtility.swift */,
-				FC4DEB211D356CAE00CA5A4E /* SettingsViewController.swift */,
 				FC5E91961D3E91490008FE54 /* SettingsHelper.swift */,
-				FCF7435E1D36BD180068903D /* Custom Cells */,
+				FC130E381D4DACEC00C71A9D /* ViewControllers */,
+				FCF7435E1D36BD180068903D /* Settings Custom Cells */,
 				FC4DEB161D35586A00CA5A4E /* Assets.xcassets */,
 				FC4DEB181D35586A00CA5A4E /* LaunchScreen.storyboard */,
 				FC4DEB1B1D35586A00CA5A4E /* Info.plist */,
@@ -86,14 +99,15 @@
 			path = "Smart Scales";
 			sourceTree = "<group>";
 		};
-		FCF7435E1D36BD180068903D /* Custom Cells */ = {
+		FCF7435E1D36BD180068903D /* Settings Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FCF743581D36AE5A0068903D /* keyCell.swift */,
 				FCF7435A1D36BCF00068903D /* scaleCell.swift */,
 				FCF7435C1D36BD080068903D /* tuningCell.swift */,
+				FC130E391D4FC45A00C71A9D /* autoLockCell.swift */,
 			);
-			name = "Custom Cells";
+			name = "Settings Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC130E371D4DACD800C71A9D /* HelpViewController.swift in Sources */,
 				FC5E919D1D4026F90008FE54 /* UIUtility.swift in Sources */,
 				FCFA3E161D47D72E0098E379 /* myNavigationController.swift in Sources */,
 				FC5E91971D3E91490008FE54 /* SettingsHelper.swift in Sources */,
@@ -178,6 +193,7 @@
 				FC4DEB101D35586900CA5A4E /* AppDelegate.swift in Sources */,
 				FC5E91951D3D7DBF0008FE54 /* FretboardView.swift in Sources */,
 				FCF7435B1D36BCF00068903D /* scaleCell.swift in Sources */,
+				FC130E3A1D4FC45A00C71A9D /* autoLockCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

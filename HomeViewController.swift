@@ -55,6 +55,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
         self.navigationItem.titleView = label
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.orientationChanged), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
+        //determine whether autolock is enabled
+        if SettingsHelper.switchState == "Off" {
+            UIApplication.sharedApplication().idleTimerDisabled = false
+        }
+        else { UIApplication.sharedApplication().idleTimerDisabled = true }
 
         
     }
