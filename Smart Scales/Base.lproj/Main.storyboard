@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cme-nQ-DjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="811"/>
+            <point key="canvasLocation" x="2491" y="446"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="r2z-Cq-Ive">
@@ -283,47 +283,61 @@
         <scene sceneID="CVz-2F-DU7">
             <objects>
                 <tableViewController id="VMJ-KP-dvx" customClass="HelpViewController" customModule="Smart_Scales" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1iZ-tJ-K7y">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1iZ-tJ-K7y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="100" id="xSF-Ng-kbi">
-                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xSF-Ng-kbi" id="Cpu-FU-XYP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The key and scale name are d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY3-l2-uwT">
-                                            <rect key="frame" x="68" y="8" width="380" height="83"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COFCell" rowHeight="400" id="aNL-Ip-jmN">
-                                <rect key="frame" x="0.0" y="192" width="600" height="400"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNL-Ip-jmN" id="rzZ-9s-wTh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="399"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circle of fifths color" translatesAutoresizingMaskIntoConstraints="NO" id="ePU-L4-Yzo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ePU-L4-Yzo" firstAttribute="top" secondItem="rzZ-9s-wTh" secondAttribute="top" id="BTc-Zp-qvL"/>
-                                        <constraint firstItem="ePU-L4-Yzo" firstAttribute="leading" secondItem="rzZ-9s-wTh" secondAttribute="leading" id="Hec-rd-5Sq"/>
-                                        <constraint firstAttribute="trailing" secondItem="ePU-L4-Yzo" secondAttribute="trailing" id="Nkt-B0-bE2"/>
-                                        <constraint firstAttribute="bottom" secondItem="ePU-L4-Yzo" secondAttribute="bottom" id="TIN-Mn-hmv"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="Bwf-Z5-CbR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="100" id="xSF-Ng-kbi">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xSF-Ng-kbi" id="Cpu-FU-XYP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The key and scale name are d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY3-l2-uwT">
+                                                    <rect key="frame" x="68" y="8" width="380" height="83"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COFCell" rowHeight="310" id="aNL-Ip-jmN">
+                                        <rect key="frame" x="0.0" y="164" width="600" height="310"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNL-Ip-jmN" id="rzZ-9s-wTh">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="309"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle-of-fifths.svg" translatesAutoresizingMaskIntoConstraints="NO" id="pYa-5j-IHJ">
+                                                    <rect key="frame" x="150" y="5" width="300" height="300"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="a77-ET-hwJ"/>
+                                                        <constraint firstAttribute="width" constant="300" id="vlC-lI-qfq"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pYa-5j-IHJ" firstAttribute="centerY" secondItem="rzZ-9s-wTh" secondAttribute="centerY" id="6MO-4g-AqH"/>
+                                                <constraint firstItem="pYa-5j-IHJ" firstAttribute="top" secondItem="rzZ-9s-wTh" secondAttribute="topMargin" id="A5L-YM-U9d"/>
+                                                <constraint firstItem="pYa-5j-IHJ" firstAttribute="leading" secondItem="rzZ-9s-wTh" secondAttribute="leadingMargin" id="B6L-Lt-yoT"/>
+                                                <constraint firstItem="pYa-5j-IHJ" firstAttribute="centerX" secondItem="rzZ-9s-wTh" secondAttribute="centerX" id="vKT-6X-aqU"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="A5L-YM-U9d"/>
+                                                    <exclude reference="B6L-Lt-yoT"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="VMJ-KP-dvx" id="dOa-FM-FoX"/>
                             <outlet property="delegate" destination="VMJ-KP-dvx" id="n9z-hd-9dr"/>
@@ -361,6 +375,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle of fifths color" width="170" height="170"/>
+        <image name="Circle-of-fifths.svg" width="1242" height="1242"/>
     </resources>
 </document>
