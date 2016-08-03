@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC130E371D4DACD800C71A9D /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC130E361D4DACD800C71A9D /* HelpViewController.swift */; };
 		FC130E3A1D4FC45A00C71A9D /* autoLockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC130E391D4FC45A00C71A9D /* autoLockCell.swift */; };
+		FC130E3C1D52937D00C71A9D /* chordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC130E3B1D52937D00C71A9D /* chordsCell.swift */; };
 		FC4DEB101D35586900CA5A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DEB0F1D35586900CA5A4E /* AppDelegate.swift */; };
 		FC4DEB151D35586A00CA5A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4DEB131D35586A00CA5A4E /* Main.storyboard */; };
 		FC4DEB171D35586A00CA5A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4DEB161D35586A00CA5A4E /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		FC130E361D4DACD800C71A9D /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		FC130E391D4FC45A00C71A9D /* autoLockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoLockCell.swift; sourceTree = "<group>"; };
+		FC130E3B1D52937D00C71A9D /* chordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chordsCell.swift; sourceTree = "<group>"; };
 		FC4DEB0C1D35586900CA5A4E /* Smart Scales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Scales.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4DEB0F1D35586900CA5A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC4DEB141D35586A00CA5A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 				FC5E919C1D4026F90008FE54 /* UIUtility.swift */,
 				FC5E91961D3E91490008FE54 /* SettingsHelper.swift */,
 				FC130E381D4DACEC00C71A9D /* ViewControllers */,
-				FCF7435E1D36BD180068903D /* Settings Custom Cells */,
+				FCF7435E1D36BD180068903D /* Custom Cells */,
 				FC4DEB161D35586A00CA5A4E /* Assets.xcassets */,
 				FC4DEB181D35586A00CA5A4E /* LaunchScreen.storyboard */,
 				FC4DEB1B1D35586A00CA5A4E /* Info.plist */,
@@ -99,15 +101,16 @@
 			path = "Smart Scales";
 			sourceTree = "<group>";
 		};
-		FCF7435E1D36BD180068903D /* Settings Custom Cells */ = {
+		FCF7435E1D36BD180068903D /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FCF743581D36AE5A0068903D /* keyCell.swift */,
 				FCF7435A1D36BCF00068903D /* scaleCell.swift */,
 				FCF7435C1D36BD080068903D /* tuningCell.swift */,
 				FC130E391D4FC45A00C71A9D /* autoLockCell.swift */,
+				FC130E3B1D52937D00C71A9D /* chordsCell.swift */,
 			);
-			name = "Settings Custom Cells";
+			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +193,7 @@
 				FC4DEB221D356CAE00CA5A4E /* SettingsViewController.swift in Sources */,
 				FCF743591D36AE5A0068903D /* keyCell.swift in Sources */,
 				FC5E919B1D3FE4B00008FE54 /* HomeViewController.swift in Sources */,
+				FC130E3C1D52937D00C71A9D /* chordsCell.swift in Sources */,
 				FC4DEB101D35586900CA5A4E /* AppDelegate.swift in Sources */,
 				FC5E91951D3D7DBF0008FE54 /* FretboardView.swift in Sources */,
 				FCF7435B1D36BCF00068903D /* scaleCell.swift in Sources */,

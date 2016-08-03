@@ -283,22 +283,22 @@
         <scene sceneID="CVz-2F-DU7">
             <objects>
                 <tableViewController id="VMJ-KP-dvx" customClass="HelpViewController" customModule="Smart_Scales" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1iZ-tJ-K7y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1iZ-tJ-K7y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="138" id="xSF-Ng-kbi">
-                                <rect key="frame" x="0.0" y="92" width="600" height="138"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="100" id="xSF-Ng-kbi">
+                                <rect key="frame" x="0.0" y="114" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xSF-Ng-kbi" id="Cpu-FU-XYP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="137"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yao-al-mf1">
-                                            <rect key="frame" x="8" y="8" width="584" height="121"/>
+                                            <rect key="frame" x="8" y="8" width="584" height="83"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Begin by navigating to Settings and selecting the key and scale of your choice. Then set the tuning to correspond with your guitar's tuning or experiment with different alternate tunings and find unique patterns that suit your playstyle best!</string>
+                                            <string key="text">Begin by navigating to Settings and selecting the key and scale of your choice. Then set the tuning to correspond with your guitar's current tuning or experiment with different alternate tunings and find unique patterns that suit your playstyle best!</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -311,26 +311,81 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" rowHeight="400" id="aNL-Ip-jmN">
-                                <rect key="frame" x="0.0" y="230" width="600" height="400"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" rowHeight="300" id="aNL-Ip-jmN">
+                                <rect key="frame" x="0.0" y="214" width="600" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNL-Ip-jmN" id="rzZ-9s-wTh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="399"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7I-FV-6Nd">
-                                            <rect key="frame" x="8" y="8" width="584" height="383"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7I-FV-6Nd">
+                                            <rect key="frame" x="8" y="8" width="584" height="283"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <mutableString key="text">One of the best ways to practice scales is to experiment with different interval patterns.  An interval is simply the distance between any two notes and typically refers to the position a note has within a scale where the root note (or key of the scale) serves as the reference point. So in a C-Major scale, C = root, D = 2nd, E = 3rd, ..., B = 7th (Note: in the pentatonic scales the 4th and 7th intervals are omitted).
+                                            <attributedString key="attributedText">
+                                                <fragment>
+                                                    <string key="content">One of the best ways to practice scales is to experiment with different interval patterns.  An interval is simply the distance between any two notes and typically refers to the position a note has within a scale where the root note (or key of the scale) serves as the reference point. So in a C-Major scale, C = root, D = 2nd, E = 3rd, ..., B = 7th (Note: in the pentatonic scales the 4th and 7th intervals are omitted).
 
-*Patterns to practice*
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="*Patterns to practice*">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">
 Play the reverse to descend!
-Thirds: 1(root)-3-2-4-3-5-4-6-5-7-6-8(root)
-Thirds(inverted): 3-1-4-2-5-3-6-4-7-5-8-6 
-Mix&amp;Match: 1-3-4-2-3-5-6-4-5-7-8-6
-
-Come up with your own patterns, repeat them up and down the fretboard and don't forget to use the HIGHLIGHTED INTERVALS option in Settings.</mutableString>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+Thirds: </string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="1(root)-3-2-4-3-5-4-6-5-7-6-8(root)">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">
+Thirds(inverted): </string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">3-1-4-2-5-3-6-4-7-5-8-6 
+</string>
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Mix&amp;Match: ">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">1-3-4-2-3-5-6-4-5-7-8-6
+</string>
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">
+Come up with your own patterns, repeat them up and down the fretboard and don't forget to use the HIGHLIGHTED INTERVALS option in Settings.</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
@@ -339,6 +394,222 @@ Come up with your own patterns, repeat them up and down the fretboard and don't 
                                         <constraint firstItem="G7I-FV-6Nd" firstAttribute="leading" secondItem="rzZ-9s-wTh" secondAttribute="leadingMargin" id="2Fa-Zr-zS2"/>
                                         <constraint firstItem="G7I-FV-6Nd" firstAttribute="top" secondItem="rzZ-9s-wTh" secondAttribute="topMargin" id="gwl-qm-leX"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="G7I-FV-6Nd" secondAttribute="trailing" id="uHC-2O-btM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="progressionCell" rowHeight="300" id="sWm-eP-9jx">
+                                <rect key="frame" x="0.0" y="514" width="600" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sWm-eP-9jx" id="hcc-8t-KQ2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qW-ke-for">
+                                            <rect key="frame" x="8" y="8" width="584" height="283"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <attributedString key="attributedText">
+                                                <fragment>
+                                                    <string key="content">First select the progression that you want to play, a progression is simply a combination of chords that gives a song a distinct sound. 
+
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="*List of common progressions*">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="I - V - VI - IV">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> (most popular)
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="VI - V - IV - V">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> (effective in all genres)
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="I - IV - V - V">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> (sad ballad)
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="I - I - IV - VI">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> (wistful ballad)
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="I - IV - I - V">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> (heavy and/or funky)
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="I - III - IV - VI">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> (energetic)
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="I - VI - IV - V ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="or">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" I - VI - II - V">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> (eerie)
+
+Next you need to pick the key that you're progression will be in, major keys tend to sound happy while minor keys tend to sound sad. Then refer to the chart below and find the row that matches your key and the columns that match your chord progression.</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7qW-ke-for" firstAttribute="bottom" secondItem="hcc-8t-KQ2" secondAttribute="bottomMargin" id="3lI-kJ-Oq9"/>
+                                        <constraint firstItem="7qW-ke-for" firstAttribute="leading" secondItem="hcc-8t-KQ2" secondAttribute="leadingMargin" id="Xr3-TY-nnQ"/>
+                                        <constraint firstItem="7qW-ke-for" firstAttribute="trailing" secondItem="hcc-8t-KQ2" secondAttribute="trailingMargin" id="bCP-Ks-Xjq"/>
+                                        <constraint firstItem="7qW-ke-for" firstAttribute="top" secondItem="hcc-8t-KQ2" secondAttribute="topMargin" id="tlC-ci-dof"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chartCell" rowHeight="200" id="tS0-nw-Znw">
+                                <rect key="frame" x="0.0" y="814" width="600" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tS0-nw-Znw" id="Lyk-hJ-zBR">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key chord chart final" translatesAutoresizingMaskIntoConstraints="NO" id="Var-uZ-9Xy">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="500" id="n0N-TR-y1S"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Var-uZ-9Xy" firstAttribute="top" secondItem="Lyk-hJ-zBR" secondAttribute="top" id="JY2-Gm-KyL"/>
+                                        <constraint firstItem="Var-uZ-9Xy" firstAttribute="leading" secondItem="Lyk-hJ-zBR" secondAttribute="leading" id="UZZ-FS-MvA"/>
+                                        <constraint firstAttribute="trailing" secondItem="Var-uZ-9Xy" secondAttribute="trailing" id="yOq-UE-J0u"/>
+                                        <constraint firstAttribute="bottom" secondItem="Var-uZ-9Xy" secondAttribute="bottom" id="z6t-Qr-wIR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chordCell" rowHeight="200" id="tE9-3q-mJI">
+                                <rect key="frame" x="0.0" y="1014" width="600" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tE9-3q-mJI" id="kGN-ul-UCW">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zdg-t7-W3c">
+                                            <rect key="frame" x="8" y="8" width="584" height="183"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zdg-t7-W3c" secondAttribute="trailing" id="Fu3-cZ-b42"/>
+                                        <constraint firstItem="zdg-t7-W3c" firstAttribute="leading" secondItem="kGN-ul-UCW" secondAttribute="leadingMargin" id="RFV-6x-udz"/>
+                                        <constraint firstItem="zdg-t7-W3c" firstAttribute="top" secondItem="kGN-ul-UCW" secondAttribute="topMargin" id="Xga-Eq-CpW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zdg-t7-W3c" secondAttribute="bottom" id="Zyg-bk-wMf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -353,7 +624,10 @@ Come up with your own patterns, repeat them up and down the fretboard and don't 
                         <barButtonItem id="abe-AL-j7z"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1400"/>
                     <connections>
+                        <outlet property="helpTableView" destination="1iZ-tJ-K7y" id="UR3-Qo-E2T"/>
                         <outlet property="tableView" destination="1iZ-tJ-K7y" id="CQI-3q-Ajc"/>
                     </connections>
                 </tableViewController>
@@ -380,4 +654,7 @@ Come up with your own patterns, repeat them up and down the fretboard and don't 
             <point key="canvasLocation" x="439" y="390"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="key chord chart final" width="201" height="238"/>
+    </resources>
 </document>
