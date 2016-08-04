@@ -20,8 +20,8 @@ class HelpViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        tableView.estimatedRowHeight = 44.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 44.0
+        //tableView.rowHeight = UITableViewAutomaticDimension
 
         
         tableView.backgroundView = nil;
@@ -48,14 +48,11 @@ class HelpViewController: UITableViewController {
  
  
 
-
+    /*** Configure sections and headers ***/
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
- 
     
-    
-    //give each section a title
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         tableView.tableFooterView?.hidden = true
 
@@ -73,12 +70,22 @@ class HelpViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {  return 1 }
         if section == 1 {  return 1 }
+        if section == 2 {  return 6 }
 
-        else { return 2 }
+
+        else { return 3 }
     }
-
-
     
+    /*** Height of cell adjusts depending on contents except for custom cell ***/
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44
+    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+    }
+    
+    /*** Get the contents for each cell ***/
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath)
@@ -90,7 +97,6 @@ class HelpViewController: UITableViewController {
             return cell
         }
             
-            
         else {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("progressionCell", forIndexPath: indexPath)
@@ -100,14 +106,29 @@ class HelpViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier("chartCell", forIndexPath: indexPath)
                 return cell
             }
+            if indexPath.row == 2 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("chordsCell", forIndexPath: indexPath) as! chordsCell
+                return cell
+            }
+            if indexPath.row == 3 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("COFCell", forIndexPath: indexPath)
+                return cell
+            }
+            if indexPath.row == 4 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("COFChartCell", forIndexPath: indexPath)
+                return cell
+            }
+            if indexPath.row == 5 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("conclusionCell", forIndexPath: indexPath)
+                return cell
+            }
             else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("chartCell", forIndexPath: indexPath)
+                
                 return cell
             }
         }
         
     }
- 
- 
 
   }

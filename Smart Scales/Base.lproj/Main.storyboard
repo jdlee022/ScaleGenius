@@ -284,7 +284,7 @@
             <objects>
                 <tableViewController id="VMJ-KP-dvx" customClass="HelpViewController" customModule="Smart_Scales" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1iZ-tJ-K7y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -298,7 +298,7 @@
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yao-al-mf1">
                                             <rect key="frame" x="8" y="8" width="584" height="83"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Begin by navigating to Settings and selecting the key and scale of your choice. Then set the tuning to correspond with your guitar's current tuning or experiment with different alternate tunings and find unique patterns that suit your playstyle best!</string>
+                                            <string key="text">Begin by navigating to Settings and selecting the key and scale of your choice. Then set the tuning to correspond with your guitar's current tuning or experiment with different alternate tunings and find unique patterns that suit your playstyle best.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -590,26 +590,171 @@ Next you need to pick the key that you're progression will be in, major keys ten
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chordCell" rowHeight="200" id="tE9-3q-mJI">
-                                <rect key="frame" x="0.0" y="1014" width="600" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chordsCell" rowHeight="50" id="tE9-3q-mJI" customClass="chordsCell" customModule="Smart_Scales" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1014" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tE9-3q-mJI" id="kGN-ul-UCW">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zdg-t7-W3c">
-                                            <rect key="frame" x="8" y="8" width="584" height="183"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="text is set in custom cell" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zdg-t7-W3c">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="49"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="zdg-t7-W3c" secondAttribute="trailing" id="Fu3-cZ-b42"/>
-                                        <constraint firstItem="zdg-t7-W3c" firstAttribute="leading" secondItem="kGN-ul-UCW" secondAttribute="leadingMargin" id="RFV-6x-udz"/>
-                                        <constraint firstItem="zdg-t7-W3c" firstAttribute="top" secondItem="kGN-ul-UCW" secondAttribute="topMargin" id="Xga-Eq-CpW"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="zdg-t7-W3c" secondAttribute="bottom" id="Zyg-bk-wMf"/>
+                                        <constraint firstItem="zdg-t7-W3c" firstAttribute="leading" secondItem="kGN-ul-UCW" secondAttribute="leading" constant="8" id="1GR-GL-zku"/>
+                                        <constraint firstItem="zdg-t7-W3c" firstAttribute="top" secondItem="kGN-ul-UCW" secondAttribute="top" id="D4b-ZC-BKB"/>
+                                        <constraint firstAttribute="bottom" secondItem="zdg-t7-W3c" secondAttribute="bottom" id="ajf-T2-1xj"/>
+                                        <constraint firstAttribute="trailing" secondItem="zdg-t7-W3c" secondAttribute="trailing" constant="8" id="rJM-Py-tSc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textView" destination="zdg-t7-W3c" id="nBy-Kh-kil"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COFCell" rowHeight="200" id="HaV-2D-ZlN">
+                                <rect key="frame" x="0.0" y="1064" width="600" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HaV-2D-ZlN" id="xCD-bt-Qjp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bld-j6-luE">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="199"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Circle of Fifths">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="16" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                    <attributes>
+                                                        <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">The circle of fifths can be used in many ways but let's say that we wanted to add a chorus that sounds different from the rest of our song. First observe that the outer circle consists of major keys, and the inner minor keys. We want to choose a key that sounds different from our original key of G but still works within the scope of the song, so we look to the neighboring keys C and D as well as the key in the inner slice, E minor. </string>
+                                                    <attributes>
+                                                        <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="The further you get away from your original key (G in our case) the less they have in common.">
+                                                    <attributes>
+                                                        <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                                        <font key="NSOriginalFont" size="14" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" So the key of G sounds more similar to A than it does E.">
+                                                    <attributes>
+                                                        <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bld-j6-luE" firstAttribute="top" secondItem="xCD-bt-Qjp" secondAttribute="top" id="3YL-Op-SqR"/>
+                                        <constraint firstAttribute="trailing" secondItem="bld-j6-luE" secondAttribute="trailing" constant="8" id="GYV-fL-nS6"/>
+                                        <constraint firstItem="bld-j6-luE" firstAttribute="leading" secondItem="xCD-bt-Qjp" secondAttribute="leading" constant="8" id="YRa-Wi-9xv"/>
+                                        <constraint firstAttribute="bottom" secondItem="bld-j6-luE" secondAttribute="bottom" id="toQ-QS-1yB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="COFChartCell" rowHeight="200" id="pU0-M1-pcM">
+                                <rect key="frame" x="0.0" y="1264" width="600" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pU0-M1-pcM" id="QUf-0X-tHp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle-of-fifths.svg" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-SS-iRt">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="1243"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="300" id="Huv-4C-70b"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="sPm-SS-iRt" secondAttribute="trailing" id="E3m-8b-6FD"/>
+                                        <constraint firstItem="sPm-SS-iRt" firstAttribute="top" secondItem="QUf-0X-tHp" secondAttribute="top" id="NVV-Qq-xJg"/>
+                                        <constraint firstAttribute="bottom" secondItem="sPm-SS-iRt" secondAttribute="bottom" id="TZM-Js-zGm"/>
+                                        <constraint firstItem="sPm-SS-iRt" firstAttribute="leading" secondItem="QUf-0X-tHp" secondAttribute="leading" id="y3c-nA-KsL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="conclusionCell" rowHeight="150" id="Fbo-gy-Aur">
+                                <rect key="frame" x="0.0" y="1464" width="600" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fbo-gy-Aur" id="UOe-uN-9yr">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYe-hq-T3W">
+                                            <rect key="frame" x="8" y="8" width="584" height="133"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <attributedString key="attributedText">
+                                                <fragment>
+                                                    <string key="content">Let's say that we want our chorus to have a darker tone so we decide to use the key of E minor, then using the same progression as before we get the chords Em-G-Am-C. Now we have two chord progressions to use in our song: </string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="G-Bm-C-Em">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" and ">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Em-G-Am-C">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">. Don't forget to use Settings to select the key &amp; scale that fit your song and find out what other notes work within the scope of your song.</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PYe-hq-T3W" firstAttribute="trailing" secondItem="UOe-uN-9yr" secondAttribute="trailingMargin" id="ELe-Ra-bRk"/>
+                                        <constraint firstItem="PYe-hq-T3W" firstAttribute="leading" secondItem="UOe-uN-9yr" secondAttribute="leadingMargin" id="ZrL-t3-ire"/>
+                                        <constraint firstItem="PYe-hq-T3W" firstAttribute="top" secondItem="UOe-uN-9yr" secondAttribute="topMargin" id="aB8-8q-9EW"/>
+                                        <constraint firstItem="PYe-hq-T3W" firstAttribute="bottom" secondItem="UOe-uN-9yr" secondAttribute="bottomMargin" id="gxY-8u-RdL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -625,7 +770,7 @@ Next you need to pick the key that you're progression will be in, major keys ten
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1400"/>
+                    <size key="freeformSize" width="600" height="1700"/>
                     <connections>
                         <outlet property="helpTableView" destination="1iZ-tJ-K7y" id="UR3-Qo-E2T"/>
                         <outlet property="tableView" destination="1iZ-tJ-K7y" id="CQI-3q-Ajc"/>
@@ -655,6 +800,7 @@ Next you need to pick the key that you're progression will be in, major keys ten
         </scene>
     </scenes>
     <resources>
+        <image name="Circle-of-fifths.svg" width="1242" height="1242"/>
         <image name="key chord chart final" width="201" height="238"/>
     </resources>
 </document>
