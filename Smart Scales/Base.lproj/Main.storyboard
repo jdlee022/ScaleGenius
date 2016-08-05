@@ -159,7 +159,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disable Auto-Lock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBY-4w-Kd7">
                                                     <rect key="frame" x="8" y="14" width="141" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-bD-4Od">
@@ -284,7 +284,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1iZ-tJ-K7y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="100" id="xSF-Ng-kbi">
                                 <rect key="frame" x="0.0" y="114" width="600" height="100"/>
@@ -573,18 +573,18 @@ Next you need to pick the key that you're progression will be in, major keys ten
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key chord chart final" translatesAutoresizingMaskIntoConstraints="NO" id="Var-uZ-9Xy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key chord chart FINAL" translatesAutoresizingMaskIntoConstraints="NO" id="Var-uZ-9Xy">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="231"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="500" id="n0N-TR-y1S"/>
+                                                <constraint firstAttribute="height" constant="440" id="oXY-Ur-4de"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Var-uZ-9Xy" firstAttribute="top" secondItem="Lyk-hJ-zBR" secondAttribute="top" id="JY2-Gm-KyL"/>
-                                        <constraint firstItem="Var-uZ-9Xy" firstAttribute="leading" secondItem="Lyk-hJ-zBR" secondAttribute="leading" id="UZZ-FS-MvA"/>
-                                        <constraint firstAttribute="trailing" secondItem="Var-uZ-9Xy" secondAttribute="trailing" id="yOq-UE-J0u"/>
-                                        <constraint firstAttribute="bottom" secondItem="Var-uZ-9Xy" secondAttribute="bottom" id="z6t-Qr-wIR"/>
+                                        <constraint firstAttribute="trailing" secondItem="Var-uZ-9Xy" secondAttribute="trailing" id="KkS-c3-Tbd"/>
+                                        <constraint firstAttribute="bottom" secondItem="Var-uZ-9Xy" secondAttribute="bottom" constant="40" id="PmN-sW-RII"/>
+                                        <constraint firstItem="Var-uZ-9Xy" firstAttribute="leading" secondItem="Lyk-hJ-zBR" secondAttribute="leading" id="UaK-XQ-Wun"/>
+                                        <constraint firstItem="Var-uZ-9Xy" firstAttribute="top" secondItem="Lyk-hJ-zBR" secondAttribute="top" id="g2k-CO-C4Z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -677,30 +677,30 @@ Cg
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="COFChartCell" rowHeight="200" id="pU0-M1-pcM">
-                                <rect key="frame" x="0.0" y="1264" width="600" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="COFChartCell" rowHeight="240" id="pU0-M1-pcM">
+                                <rect key="frame" x="0.0" y="1264" width="600" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pU0-M1-pcM" id="QUf-0X-tHp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle-of-fifths.svg" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-SS-iRt">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="1243"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="COF2" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-SS-iRt">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="300" id="Huv-4C-70b"/>
+                                                <constraint firstAttribute="height" constant="250" id="Gfc-bY-gEN"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="sPm-SS-iRt" secondAttribute="trailing" id="E3m-8b-6FD"/>
-                                        <constraint firstItem="sPm-SS-iRt" firstAttribute="top" secondItem="QUf-0X-tHp" secondAttribute="top" id="NVV-Qq-xJg"/>
-                                        <constraint firstAttribute="bottom" secondItem="sPm-SS-iRt" secondAttribute="bottom" id="TZM-Js-zGm"/>
-                                        <constraint firstItem="sPm-SS-iRt" firstAttribute="leading" secondItem="QUf-0X-tHp" secondAttribute="leading" id="y3c-nA-KsL"/>
+                                        <constraint firstItem="sPm-SS-iRt" firstAttribute="top" secondItem="QUf-0X-tHp" secondAttribute="top" id="JQh-jr-cTd"/>
+                                        <constraint firstAttribute="bottom" secondItem="sPm-SS-iRt" secondAttribute="bottom" id="Qmq-2c-8oZ"/>
+                                        <constraint firstItem="sPm-SS-iRt" firstAttribute="leading" secondItem="QUf-0X-tHp" secondAttribute="leading" id="dPu-aX-VY6"/>
+                                        <constraint firstAttribute="trailing" secondItem="sPm-SS-iRt" secondAttribute="trailing" id="rkt-4l-uIe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="conclusionCell" rowHeight="150" id="Fbo-gy-Aur">
-                                <rect key="frame" x="0.0" y="1464" width="600" height="150"/>
+                                <rect key="frame" x="0.0" y="1504" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fbo-gy-Aur" id="UOe-uN-9yr">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
@@ -798,7 +798,7 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="Circle-of-fifths.svg" width="1242" height="1242"/>
-        <image name="key chord chart final" width="201" height="238"/>
+        <image name="COF2" width="320" height="239"/>
+        <image name="key chord chart FINAL" width="201" height="230"/>
     </resources>
 </document>
