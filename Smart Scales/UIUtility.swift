@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/****** THIS STRUCT IS USED IN FretboardView.swift TO DRAW THE NOTE ICONS ******/
 struct UIUtility {
     
     static func imageWithColor(color: UIColor, circular : Bool) -> UIImage {

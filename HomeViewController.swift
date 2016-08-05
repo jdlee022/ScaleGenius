@@ -30,7 +30,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
         label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
         self.navigationItem.titleView = label
         
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,6 +53,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
         label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
         self.navigationItem.titleView = label
 
+        //notifies us when the orientation of the phone changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.orientationChanged), name: UIDeviceOrientationDidChangeNotification, object: nil)
         
         //determine whether autolock is enabled
@@ -65,10 +65,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
         
     }
     
+    //the function is redefined in FretboardView.swift and called whenever the phone orientation changes
     func orientationChanged()
     {
         delegate.orientationChanged()
-        
     }
 
     
@@ -76,25 +76,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
     override func shouldAutorotate() -> Bool {
         return false
     }
-    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
     }
-    
     func navigationControllerSupportedInterfaceOrientations(navigationController: UINavigationController) -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
     }
  
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

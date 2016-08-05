@@ -18,27 +18,29 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     var myKey = "C"
     var myKeyIndex = 3
     
-    
+    //sets the Key depending on the pickerview
     func updateKey() {
-        
-        //print(myKey)
         
         //set picker components corresponding to myTuningIndex settings
         let myKeyIndexData = NSUserDefaults.standardUserDefaults()
         
-        if (myKeyIndexData.valueForKey("KeyIndex") != nil){
-        myKeyIndex = myKeyIndexData.valueForKey("KeyIndex") as! NSInteger!
-        }
-        else{ myKeyIndex = 3 }
         
         // save myKey with NSUserDefault
         if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("KeyString") {
             myKey = myLoadedString
         }
         else{ myKey = "C" }
+        
 
+        //get key row index from NSUserDefaults and set the current pickers row
+        if (myKeyIndexData.valueForKey("KeyIndex") != nil){
+            myKeyIndex = myKeyIndexData.valueForKey("KeyIndex") as! NSInteger!
+        }
+        else{ myKeyIndex = 3 }
+        
         keyPicker.selectRow(myKeyIndex, inComponent: 0, animated: true)
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,22 +52,24 @@ class keyCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    //set number of rows in picker
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return keyArr.count
     }
     
+    //set the string for each row
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return keyArr[row]
     }
     
+    //set number of columns in picker
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    //if a new row is selected update the variables and save to NSUserDefaults
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         myKeyIndex = NSInteger(row)
         myKey = keyArr[myKeyIndex]

@@ -4,20 +4,10 @@
 //  Created by Jon Lee on 7/19/16.
 //  Copyright © 2016 Jon Lee. All rights reserved.
 
-/*********** IMPORTANT STATIC VARIABLES ***********
-
- SettingsHelper.notesArr
- SettingsHelper.Key
- SettingsHelper.Scale
- 
- SettingsHelper.notesToDisplay
- SettingsHelper.firstString
- SettingsHelper.secondString   (... up to sixthString)
- 
- *********** IMPORTANT STATIC VARIABLES ***********/
 
 import Foundation
 
+/****** THIS CLASS RETRIEVES VALUES FROM NSUSERDEFAULTS AND SETS STATIC VARIABLES REPRESENTING THE CURRENT LAYOUT OF THE FRETBOARD ******/
 class SettingsHelper {
     
     static let notesArr = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
@@ -62,6 +52,7 @@ class SettingsHelper {
         
     }
     
+    //the integers refer to the index of notesArr and correspond to each of the 6 strings
     static var TuningIndex: [Int] {
         if let myTuningData = NSUserDefaults.standardUserDefaults().objectForKey("tuning") as? NSData {
             return NSKeyedUnarchiver.unarchiveObjectWithData(myTuningData) as! [Int]
@@ -70,7 +61,7 @@ class SettingsHelper {
         
     }
     
-    //retrieve array with checked rows from NSUserDefaults
+    //retrieve array with checked rows (highlighted intervals) from NSUserDefaults
     static var CheckedRows: [Int] {
         if let getArr = NSUserDefaults.standardUserDefaults().objectForKey("myCheckedArr") as? [Int] {
             return getArr
@@ -80,8 +71,9 @@ class SettingsHelper {
     
     
     
-    
+    //Create a tuple of the notes to display on the fretboard and their corresponding interval #
     static var notesToDisplay: [(String, Int)] {
+        
         
         //determine notes for MAJOR scale
         if Scale == "Major (Ionian)"{
@@ -206,7 +198,7 @@ class SettingsHelper {
             //seventhIndex = (notesArr.indexOf(Key)! + 10) % 12
             return [(notesArr[rootIndex], 0), (notesArr[secondIndex], 1), (notesArr[thirdIndex], 2), (notesArr[fourthIndex], 3), (notesArr[fifthIndex], 4), (notesArr[sixthIndex], 5)]
         }
-            //if no scale was selected (first time app is run) display Major Scale
+        //if no scale was selected (first time app is run) display Major Scale
         else {
             rootIndex = notesArr.indexOf(Key)!
             secondIndex = (notesArr.indexOf(Key)! + 2) % 12

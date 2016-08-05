@@ -199,9 +199,7 @@
                             <constraint firstItem="rMF-sd-BXK" firstAttribute="top" secondItem="CpE-g9-ise" secondAttribute="top" id="p9u-M7-0cw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="nS0-35-mC3">
-                        <barButtonItem key="backBarButtonItem" title="Done" id="ant-wK-Yw9"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="nS0-35-mC3"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1200"/>
                     <connections>
@@ -740,7 +738,7 @@ Cg
                                                     </attributes>
                                                 </fragment>
                                                 <fragment>
-                                                    <string key="content">. Don't forget to use Settings to select the key &amp; scale that fit your song and find out what other notes work within the scope of your song.</string>
+                                                    <string key="content">. Don't forget to use Settings to select the key &amp; scale that match your song and find out what other notes work within the scope of your chord progressions.</string>
                                                     <attributes>
                                                         <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>

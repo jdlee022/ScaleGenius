@@ -15,38 +15,19 @@ class HelpViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //set the ViewController title and background color of tableView
+        self.title = "Guide"
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //tableView.estimatedRowHeight = 44.0
-        //tableView.rowHeight = UITableViewAutomaticDimension
-
-        
         tableView.backgroundView = nil;
         tableView.backgroundColor = UIColor(red: 213/255, green: 232/255, blue: 255/255, alpha: 1)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
     
-    /*
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 || indexPath.section == 1 {
-            tableView.estimatedRowHeight = 44.0
-            tableView.rowHeight = UITableViewAutomaticDimension
-            return UITableViewAutomaticDimension
-        }
-        
-        else { return UITableViewAutomaticDimension }
-    }*/
- 
- 
 
     /*** Configure sections and headers ***/
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -76,7 +57,7 @@ class HelpViewController: UITableViewController {
         else { return 3 }
     }
     
-    /*** Height of cell adjusts depending on contents except for custom cell ***/
+    /*** Height of cell adjusts depending on contents ***/
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44
     }
@@ -107,6 +88,7 @@ class HelpViewController: UITableViewController {
                 return cell
             }
             if indexPath.row == 2 {
+                //retrieve the custom cell
                 let cell = tableView.dequeueReusableCellWithIdentifier("chordsCell", forIndexPath: indexPath) as! chordsCell
                 return cell
             }

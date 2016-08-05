@@ -7,11 +7,13 @@
 //
 
 import UIKit
+
+/****** THIS CLASS IS USED TO DRAW THE FRETBOARD WITH CORE GRAPHICS IN HomeViewController ******/
 @IBDesignable class FretboardView: UIView, OrientationDelegate {
-    
     
     var currentOrientation = "portrait"
     
+    //these are the colors displayed for the corresponding highlighted interval
     let intervalColor = [UIColor(red: 140/255, green: 38/255, blue: 170/255, alpha: 1), UIColor(red: 50/255, green: 80/255, blue: 205/255, alpha: 1), UIColor(red: 50/255, green: 123/255, blue: 142/255, alpha: 1), UIColor(red: 60/255, green: 205/255, blue: 115/255, alpha: 1), UIColor(red: 234/255, green: 188/255, blue: 0/255, alpha: 1), UIColor(red: 220/255, green: 143/255, blue: 91/255, alpha: 1), UIColor(red: 201/255, green: 80/255, blue: 115/255, alpha: 1)]
     
     //redraw the view whenever the orientation is changed
@@ -93,16 +95,17 @@ import UIKit
         for string in 0...6{
             for fret in 0...24 {
                 
-                //Change dimensions to adjust for portrait view
                 //use this transparent default image if the note should not be displayed
                 var noteImage = UIUtility.circleImageWithText(text: "", font: font, circleColor: UIColor.blackColor().colorWithAlphaComponent(0.0))
+                
                 //draw fret numbers with clear background color
                 if string == 0{
                     if fret != 0 {
                         noteImage = UIUtility.circleImageWithText(text: String(fret), font: font, circleColor: UIColor.clearColor())
                     }
                 }
-                //draw notes on strings if they are contained in [notesToDisplay] or if 0th fret
+                
+                //draw notes on strings if they are contained in [notesToDisplay] or if fret == 0
                 if string == 1{
                     //draw the text for the string above the nut regardless of notesToDisplay contents
                     if fret == 0 {
@@ -245,7 +248,7 @@ import UIKit
         return false
     }
 
-    //get the color for a note depending on CheckedRows
+    //get the color for a note depending on CheckedRows aka the highlighted intervals
     func getColorForNote(note: String, tupleArr: [(String, Int)]) -> UIColor {
         var colorNum = 0
         

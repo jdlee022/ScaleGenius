@@ -59,6 +59,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.section == 0 {
             //set contents of  keyCell
             if indexPath.row == 0 {
+                //retrieve the custom cell
                 let cell = self.tableView.dequeueReusableCellWithIdentifier("keyCell", forIndexPath: indexPath) as! keyCell
                 cell.keyLabel.text = "Key"
                 cell.updateKey()
@@ -67,6 +68,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             //set contents of scaleCell
             if indexPath.row == 1 {
+                //retrieve the custom cell
                 let cell = self.tableView.dequeueReusableCellWithIdentifier("scaleCell", forIndexPath: indexPath) as! scaleCell
                 cell.scaleLabel.text = "Scale"
                 cell.updateScale()
@@ -76,6 +78,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 
                 //set contents of tuningCell
             else{
+                //retrieve the custom cell
                 let cell = self.tableView.dequeueReusableCellWithIdentifier("tuningCell", forIndexPath: indexPath) as! tuningCell
                 cell.tuningLabel.text = "Tuning"
                 cell.updateTuning()
@@ -90,7 +93,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 cell.textLabel?.text = "\(intervals[indexPath.row])   (N/A for Pentatonic)"
             }
             else { cell.textLabel?.text = intervals[indexPath.row] }
-            
+            //dont show selection animation
             cell.selectionStyle = .None
             
             //get array of checked rows from NSUserDefaults and set accessory type
