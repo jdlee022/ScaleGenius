@@ -33,6 +33,16 @@ class SettingsHelper {
     }
     
     //Retrieve values from NSUserDefaults
+    static var intervalState: String {
+
+        // get value from NSUserDefaults
+        if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("intervalState") {
+            return myLoadedString
+        }
+        else { return "Off" }
+    }
+    
+    //Retrieve values from NSUserDefaults
     static var Key: String {
         
         // save Key with NSUserDefault

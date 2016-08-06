@@ -149,15 +149,15 @@
                                             <outlet property="tuningPicker" destination="P80-hX-Gix" id="ji3-DN-5Hp"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="autoLockCell" rowHeight="50" id="2GU-cb-i4M" customClass="autoLockCell" customModule="Smart_Scales" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="toggleIntervalCell" rowHeight="50" id="2GU-cb-i4M" customClass="toggleIntervalCell" customModule="Smart_Scales" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="690" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2GU-cb-i4M" id="tkk-7K-b6O">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disable Auto-Lock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBY-4w-Kd7">
-                                                    <rect key="frame" x="8" y="14" width="141" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toggle Interval Numbers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBY-4w-Kd7">
+                                                    <rect key="frame" x="8" y="14" width="187" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -165,7 +165,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-bD-4Od">
                                                     <rect key="frame" x="543" y="9" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="toggleAutolock:" destination="2GU-cb-i4M" eventType="valueChanged" id="3iB-AW-xFf"/>
+                                                        <action selector="toggleIntervalNums:" destination="2GU-cb-i4M" eventType="valueChanged" id="z0W-Bb-RwB"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -180,7 +180,41 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="mySwitch" destination="qY9-bD-4Od" id="Hw7-wr-xpe"/>
+                                            <outlet property="intervalSwitch" destination="qY9-bD-4Od" id="kb1-9y-5u4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="autoLockCell" rowHeight="50" id="UQ8-DX-X8F" customClass="autoLockCell" customModule="Smart_Scales" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="740" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UQ8-DX-X8F" id="mXx-r5-Wy7">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disable Auto-Lock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbu-uQ-6i6">
+                                                    <rect key="frame" x="8" y="14" width="141" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D22-6C-tFm">
+                                                    <rect key="frame" x="543" y="9" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleAutolock:" destination="UQ8-DX-X8F" eventType="valueChanged" id="raZ-4e-wIJ"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="sbu-uQ-6i6" firstAttribute="top" secondItem="mXx-r5-Wy7" secondAttribute="top" constant="14" id="7dh-Y4-hzk"/>
+                                                <constraint firstAttribute="trailing" secondItem="D22-6C-tFm" secondAttribute="trailing" constant="8" id="T2Z-1m-1WA"/>
+                                                <constraint firstItem="sbu-uQ-6i6" firstAttribute="leading" secondItem="mXx-r5-Wy7" secondAttribute="leading" constant="8" id="ZmF-4I-c7X"/>
+                                                <constraint firstItem="D22-6C-tFm" firstAttribute="centerY" secondItem="mXx-r5-Wy7" secondAttribute="centerY" id="Zzz-Vm-VlI"/>
+                                                <constraint firstAttribute="bottom" secondItem="sbu-uQ-6i6" secondAttribute="bottom" constant="14" id="aRo-gK-2CL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="mySwitch" destination="D22-6C-tFm" id="u1n-ZT-b1k"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -378,9 +412,15 @@ Thirds(inverted): </string>
                                                 </fragment>
                                                 <fragment>
                                                     <string key="content">
-Come up with your own patterns, repeat them up and down the fretboard and don't forget to use the HIGHLIGHTED INTERVALS option in Settings.</string>
+Come up with your own patterns, repeat them up and down the fretboard and </string>
                                                     <attributes>
                                                         <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="don't forget to use the Highlighted Intervals and Toggle Interval Numbers options in Settings.">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                        <font key="NSOriginalFont" size="14" name="HelveticaNeue"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -566,7 +606,7 @@ Next you need to pick the key that you're progression will be in, major keys ten
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chartCell" rowHeight="200" id="tS0-nw-Znw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="chartCell" rowHeight="200" id="tS0-nw-Znw">
                                 <rect key="frame" x="0.0" y="814" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tS0-nw-Znw" id="Lyk-hJ-zBR">
@@ -582,7 +622,7 @@ Next you need to pick the key that you're progression will be in, major keys ten
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Var-uZ-9Xy" secondAttribute="trailing" id="KkS-c3-Tbd"/>
-                                        <constraint firstAttribute="bottom" secondItem="Var-uZ-9Xy" secondAttribute="bottom" constant="40" id="PmN-sW-RII"/>
+                                        <constraint firstAttribute="bottom" secondItem="Var-uZ-9Xy" secondAttribute="bottom" id="PmN-sW-RII"/>
                                         <constraint firstItem="Var-uZ-9Xy" firstAttribute="leading" secondItem="Lyk-hJ-zBR" secondAttribute="leading" id="UaK-XQ-Wun"/>
                                         <constraint firstItem="Var-uZ-9Xy" firstAttribute="top" secondItem="Lyk-hJ-zBR" secondAttribute="top" id="g2k-CO-C4Z"/>
                                     </constraints>

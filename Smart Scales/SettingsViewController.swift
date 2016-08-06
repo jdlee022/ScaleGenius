@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //number of sections
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     //give each section a title
@@ -27,6 +27,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             return "Fretboard Display"
         }
         if section == 1 {
+            return "Replace Note With Interval Number"
+        }
+        if section == 2 {
             return "Highlighted Intervals"
         }
         else { return "Prevent Screen From Turning Off" }
@@ -37,7 +40,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         if section == 0{
             return 3
         }
-        if section == 1 {
+        if section == 2 {
             return intervals.count
         }
         else { return 1 }
@@ -85,9 +88,15 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 return cell
             }
         }
+        
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("toggleIntervalCell", forIndexPath: indexPath) as UITableViewCell
+            
+            return cell
+        }
             
         //create cells for second section based on [intervals]
-        if indexPath.section == 1 {
+        if indexPath.section == 2 {
             let cell = UITableViewCell()
             if indexPath.row == 3 || indexPath.row == 6 {
                 cell.textLabel?.text = "\(intervals[indexPath.row])   (N/A for Pentatonic)"
@@ -111,9 +120,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             return cell
         }
+            
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier("autoLockCell", forIndexPath: indexPath) as UITableViewCell
-            
             
             return cell
         }
@@ -122,7 +131,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 2 {
             //get current cell
             let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
            

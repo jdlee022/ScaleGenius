@@ -12,6 +12,7 @@ import UIKit
 @IBDesignable class FretboardView: UIView, OrientationDelegate {
     
     var currentOrientation = "portrait"
+    var stringDisplayed = "set in nested for loop"
     
     //these are the colors displayed for the corresponding highlighted interval
     let intervalColor = [UIColor(red: 140/255, green: 38/255, blue: 170/255, alpha: 1), UIColor(red: 50/255, green: 80/255, blue: 205/255, alpha: 1), UIColor(red: 50/255, green: 123/255, blue: 142/255, alpha: 1), UIColor(red: 60/255, green: 205/255, blue: 115/255, alpha: 1), UIColor(red: 234/255, green: 188/255, blue: 0/255, alpha: 1), UIColor(red: 220/255, green: 143/255, blue: 91/255, alpha: 1), UIColor(red: 201/255, green: 80/255, blue: 115/255, alpha: 1)]
@@ -45,7 +46,7 @@ import UIKit
         
         //draw fretboard rectangle
         let fretboardRect = CGRectMake(rect.width/8,rect.height/26,rect.width*6/8, rect.height*25/26)
-        CGContextSetFillColorWithColor(context, UIColor(red: 255/255, green: 255/255, blue: 215/255, alpha: 1).CGColor)
+        CGContextSetFillColorWithColor(context, UIColor(red: 231/255, green: 226/255, blue: 197/255, alpha: 1).CGColor)
         CGContextAddRect(context, fretboardRect)
         CGContextFillRect(context, fretboardRect)
         CGContextStrokePath(context)
@@ -112,8 +113,19 @@ import UIKit
                         noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: UIColor.clearColor())
 
                     }
+                    //if the note at current string&fret is in notesToDisplay then set noteImage
                     if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.sixthString[fret]) {
-                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.sixthString[fret], font: font, circleColor: getColorForNote(SettingsHelper.sixthString[fret], tupleArr: SettingsHelper.notesToDisplay))
+                        //draw note or interval number depending on switch in Settings
+                        if SettingsHelper.intervalState == "On" {
+                            //get the interval number as a string
+                            stringDisplayed = getIntervalNum(SettingsHelper.sixthString[fret], tupleArr: SettingsHelper.notesToDisplay)
+                        }
+                        //use the note letter
+                        else {
+                            stringDisplayed = SettingsHelper.sixthString[fret]
+                        }
+                        
+                        noteImage = UIUtility.circleImageWithText(text: stringDisplayed, font: font, circleColor: getColorForNote(SettingsHelper.sixthString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 2{
@@ -122,7 +134,14 @@ import UIKit
                         
                     }
                     if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.fifthString[fret]) {
-                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fifthString[fret], font: font, circleColor: getColorForNote(SettingsHelper.fifthString[fret], tupleArr: SettingsHelper.notesToDisplay))
+                        if SettingsHelper.intervalState == "On" {
+                            stringDisplayed = getIntervalNum(SettingsHelper.fifthString[fret], tupleArr: SettingsHelper.notesToDisplay)
+                        }
+                        else {
+                            stringDisplayed = SettingsHelper.fifthString[fret]
+                        }
+                        
+                        noteImage = UIUtility.circleImageWithText(text: stringDisplayed, font: font, circleColor: getColorForNote(SettingsHelper.fifthString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 3{
@@ -131,7 +150,14 @@ import UIKit
                         
                     }
                     if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.fourthString[fret]) {
-                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.fourthString[fret], font: font, circleColor: getColorForNote(SettingsHelper.fourthString[fret], tupleArr: SettingsHelper.notesToDisplay))
+                        if SettingsHelper.intervalState == "On" {
+                            stringDisplayed = getIntervalNum(SettingsHelper.fourthString[fret], tupleArr: SettingsHelper.notesToDisplay)
+                        }
+                        else {
+                            stringDisplayed = SettingsHelper.fourthString[fret]
+                        }
+                        
+                        noteImage = UIUtility.circleImageWithText(text: stringDisplayed, font: font, circleColor: getColorForNote(SettingsHelper.fourthString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 4{
@@ -140,7 +166,14 @@ import UIKit
                         
                     }
                     if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.thirdString[fret]) {
-                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.thirdString[fret], font: font, circleColor: getColorForNote(SettingsHelper.thirdString[fret], tupleArr: SettingsHelper.notesToDisplay))
+                        if SettingsHelper.intervalState == "On" {
+                            stringDisplayed = getIntervalNum(SettingsHelper.thirdString[fret], tupleArr: SettingsHelper.notesToDisplay)
+                        }
+                        else {
+                            stringDisplayed = SettingsHelper.thirdString[fret]
+                        }
+                        
+                        noteImage = UIUtility.circleImageWithText(text: stringDisplayed, font: font, circleColor: getColorForNote(SettingsHelper.thirdString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 5{
@@ -149,7 +182,14 @@ import UIKit
                         
                     }
                     if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.secondString[fret]) {
-                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.secondString[fret], font: font, circleColor: getColorForNote(SettingsHelper.secondString[fret], tupleArr: SettingsHelper.notesToDisplay))
+                        if SettingsHelper.intervalState == "On" {
+                            stringDisplayed = getIntervalNum(SettingsHelper.secondString[fret], tupleArr: SettingsHelper.notesToDisplay)
+                        }
+                        else {
+                            stringDisplayed = SettingsHelper.secondString[fret]
+                        }
+                        
+                        noteImage = UIUtility.circleImageWithText(text: stringDisplayed, font: font, circleColor: getColorForNote(SettingsHelper.secondString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 if string == 6{
@@ -158,7 +198,14 @@ import UIKit
                         
                     }
                     if tupleContainsString(SettingsHelper.notesToDisplay, note: SettingsHelper.firstString[fret]) {
-                        noteImage = UIUtility.circleImageWithText(text: SettingsHelper.firstString[fret], font: font, circleColor: getColorForNote(SettingsHelper.firstString[fret], tupleArr: SettingsHelper.notesToDisplay))
+                        if SettingsHelper.intervalState == "On" {
+                            stringDisplayed = getIntervalNum(SettingsHelper.firstString[fret], tupleArr: SettingsHelper.notesToDisplay)
+                        }
+                        else {
+                            stringDisplayed = SettingsHelper.firstString[fret]
+                        }
+                        
+                        noteImage = UIUtility.circleImageWithText(text: stringDisplayed, font: font, circleColor: getColorForNote(SettingsHelper.firstString[fret], tupleArr: SettingsHelper.notesToDisplay))
                     }
                 }
                 
@@ -259,6 +306,22 @@ import UIKit
             }
         }
         return UIColor.blackColor()
+    }
+    
+    //this function is used to get the interval number of a note as a string value 
+    func getIntervalNum(note: String, tupleArr: [(String, Int)]) -> String {
+        var returnedString = "error"
+        var newIntervalNum = 0
+        
+        for (abc, interval) in tupleArr {
+            if abc == note {
+                //add one to get correct interval num
+                newIntervalNum = interval + 1
+                returnedString = "\(newIntervalNum)"
+                return returnedString
+            }
+        }
+        return returnedString
     }
 
     
