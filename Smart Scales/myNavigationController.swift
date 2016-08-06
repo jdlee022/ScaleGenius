@@ -13,7 +13,8 @@ class myNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set the back button colors in navigation bar to match navigation items color
+        UINavigationBar.appearance().tintColor = UIColor(red: 103/255, green: 47/255, blue:0/255, alpha: 1)
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {

@@ -161,6 +161,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         //add additional code
         self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
         
+        tableView.backgroundView = nil;
+        tableView.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 242/255, alpha: 1)
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {

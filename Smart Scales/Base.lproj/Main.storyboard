@@ -55,7 +55,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="YvW-rP-WIv" secondAttribute="bottom" constant="71" id="ev2-Mt-at4"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.9339618782722513" green="0.9339618782722513" blue="0.9339618782722513" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.95982325647737954" green="0.95982325647737954" blue="0.95982325647737954" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="keyLabel" destination="YvW-rP-WIv" id="xPB-l0-ySO"/>
                                             <outlet property="keyPicker" destination="GqP-o4-taq" id="307-WK-nDs"/>
@@ -85,7 +85,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="JyY-5j-p3t" secondAttribute="bottom" constant="71" id="d3b-ak-rxl"/>
                                                 <constraint firstItem="gKa-uY-feZ" firstAttribute="bottom" secondItem="4u9-1p-uVh" secondAttribute="bottomMargin" id="oGo-4T-Y9v"/>
@@ -95,7 +95,7 @@
                                                 <constraint firstItem="JyY-5j-p3t" firstAttribute="leading" secondItem="4u9-1p-uVh" secondAttribute="leadingMargin" id="xy2-Yf-7OF"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="scaleLabel" destination="JyY-5j-p3t" id="oUj-ax-yrv"/>
                                             <outlet property="scalePicker" destination="gKa-uY-feZ" id="9of-Ae-Ghy"/>
@@ -125,7 +125,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Vsb-XD-gUB" firstAttribute="top" secondItem="eUr-4B-kXv" secondAttribute="top" id="5yR-l5-vnW"/>
                                                 <constraint firstItem="Vsb-XD-gUB" firstAttribute="centerX" secondItem="eUr-4B-kXv" secondAttribute="centerX" id="Ema-La-aGt"/>
@@ -143,7 +143,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="tuningLabel" destination="Vsb-XD-gUB" id="j60-cO-9Ia"/>
                                             <outlet property="tuningPicker" destination="P80-hX-Gix" id="ji3-DN-5Hp"/>
@@ -609,12 +609,12 @@ Next you need to pick the key that you're progression will be in, major keys ten
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="chartCell" rowHeight="200" id="tS0-nw-Znw">
                                 <rect key="frame" x="0.0" y="814" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tS0-nw-Znw" id="Lyk-hJ-zBR">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="tS0-nw-Znw" id="Lyk-hJ-zBR">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key chord chart FINAL" translatesAutoresizingMaskIntoConstraints="NO" id="Var-uZ-9Xy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="231"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="key chord chart FINAL" translatesAutoresizingMaskIntoConstraints="NO" id="Var-uZ-9Xy">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="440"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="440" id="oXY-Ur-4de"/>
                                             </constraints>
@@ -720,11 +720,11 @@ Cg
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="COFChartCell" rowHeight="240" id="pU0-M1-pcM">
                                 <rect key="frame" x="0.0" y="1264" width="600" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pU0-M1-pcM" id="QUf-0X-tHp">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="pU0-M1-pcM" id="QUf-0X-tHp">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="COF2" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-SS-iRt">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="COF2" translatesAutoresizingMaskIntoConstraints="NO" id="sPm-SS-iRt">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="250" id="Gfc-bY-gEN"/>

@@ -19,7 +19,7 @@ class HelpViewController: UITableViewController {
         self.title = "Guide"
 
         tableView.backgroundView = nil;
-        tableView.backgroundColor = UIColor(red: 213/255, green: 232/255, blue: 255/255, alpha: 1)
+        tableView.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 242/255, alpha: 1)
     }
     
     override func didReceiveMemoryWarning() {

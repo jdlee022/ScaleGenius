@@ -31,12 +31,10 @@ class toggleIntervalCell: UITableViewCell {
         if sender.on {
             UIApplication.sharedApplication().idleTimerDisabled = true
             NSUserDefaults.standardUserDefaults().setObject("On", forKey: "intervalState")
-            print(SettingsHelper.intervalState)
         }
         else {
             UIApplication.sharedApplication().idleTimerDisabled = false
             NSUserDefaults.standardUserDefaults().setObject("Off", forKey: "intervalState")
-            print(SettingsHelper.intervalState)
         }
     }
 }
