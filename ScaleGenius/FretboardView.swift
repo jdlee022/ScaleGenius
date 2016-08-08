@@ -15,7 +15,7 @@ import UIKit
     var stringDisplayed = "set in nested for loop"
     
     //these are the colors displayed for the corresponding highlighted interval
-    let intervalColor = [UIColor(red: 132/255, green: 32/255, blue: 158/255, alpha: 1), UIColor(red: 50/255, green: 80/255, blue: 205/255, alpha: 1), UIColor(red: 50/255, green: 123/255, blue: 142/255, alpha: 1), UIColor(red: 60/255, green: 205/255, blue: 115/255, alpha: 1), UIColor(red: 234/255, green: 188/255, blue: 0/255, alpha: 1), UIColor(red: 220/255, green: 143/255, blue: 91/255, alpha: 1), UIColor(red: 201/255, green: 80/255, blue: 115/255, alpha: 1)]
+    let intervalColor = [UIColor(red: 40/255, green: 133/255, blue: 150/255, alpha: 1), UIColor(red: 50/255, green: 80/255, blue: 205/255, alpha: 1), UIColor(red: 132/255, green: 32/255, blue: 158/255, alpha: 1), UIColor(red: 60/255, green: 205/255, blue: 115/255, alpha: 1), UIColor(red: 234/255, green: 188/255, blue: 0/255, alpha: 1), UIColor(red: 220/255, green: 143/255, blue: 91/255, alpha: 1), UIColor(red: 201/255, green: 80/255, blue: 115/255, alpha: 1)]
     
     //redraw the view whenever the orientation is changed
     override func layoutSubviews() {

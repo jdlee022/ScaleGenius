@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FC4DEB0B1D35586900CA5A4E"
-               BuildableName = "Smart Scales.app"
-               BlueprintName = "Smart Scales"
-               ReferencedContainer = "container:Smart Scales.xcodeproj">
+               BuildableName = "ScaleGenius.app"
+               BlueprintName = "ScaleGenius"
+               ReferencedContainer = "container:ScaleGenius.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FC4DEB0B1D35586900CA5A4E"
-            BuildableName = "Smart Scales.app"
-            BlueprintName = "Smart Scales"
-            ReferencedContainer = "container:Smart Scales.xcodeproj">
+            BuildableName = "ScaleGenius.app"
+            BlueprintName = "ScaleGenius"
+            ReferencedContainer = "container:ScaleGenius.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FC4DEB0B1D35586900CA5A4E"
-            BuildableName = "Smart Scales.app"
-            BlueprintName = "Smart Scales"
-            ReferencedContainer = "container:Smart Scales.xcodeproj">
+            BuildableName = "ScaleGenius.app"
+            BlueprintName = "ScaleGenius"
+            ReferencedContainer = "container:ScaleGenius.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FC4DEB0B1D35586900CA5A4E"
-            BuildableName = "Smart Scales.app"
-            BlueprintName = "Smart Scales"
-            ReferencedContainer = "container:Smart Scales.xcodeproj">
+            BuildableName = "ScaleGenius.app"
+            BlueprintName = "ScaleGenius"
+            ReferencedContainer = "container:ScaleGenius.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

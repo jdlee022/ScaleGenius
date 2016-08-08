@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Smart Scales.xcodeproj">
+      location = "self:/Users/Jon/Desktop/Smart Scales/ScaleGenius.xcodeproj">
    </FileRef>
 </Workspace>
