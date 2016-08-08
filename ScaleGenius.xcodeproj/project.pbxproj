@@ -19,7 +19,7 @@
 		FC5E91971D3E91490008FE54 /* SettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E91961D3E91490008FE54 /* SettingsHelper.swift */; };
 		FC5E919D1D4026F90008FE54 /* UIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E919C1D4026F90008FE54 /* UIUtility.swift */; };
 		FCE7659D1D55017E001CDFDF /* toggleIntervalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7659C1D55017E001CDFDF /* toggleIntervalCell.swift */; };
-		FCE7659E1D58111B001CDFDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E919A1D3FE4B00008FE54 /* HomeViewController.swift */; };
+		FCE765A01D58E565001CDFDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7659F1D58E565001CDFDF /* HomeViewController.swift */; };
 		FCF743591D36AE5A0068903D /* keyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF743581D36AE5A0068903D /* keyCell.swift */; };
 		FCF7435B1D36BCF00068903D /* scaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435A1D36BCF00068903D /* scaleCell.swift */; };
 		FCF7435D1D36BD080068903D /* tuningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435C1D36BD080068903D /* tuningCell.swift */; };
@@ -39,9 +39,9 @@
 		FC4DEB211D356CAE00CA5A4E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FC5E91941D3D7DBF0008FE54 /* FretboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FretboardView.swift; sourceTree = "<group>"; };
 		FC5E91961D3E91490008FE54 /* SettingsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHelper.swift; sourceTree = "<group>"; };
-		FC5E919A1D3FE4B00008FE54 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		FC5E919C1D4026F90008FE54 /* UIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtility.swift; sourceTree = "<group>"; };
 		FCE7659C1D55017E001CDFDF /* toggleIntervalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toggleIntervalCell.swift; sourceTree = "<group>"; };
+		FCE7659F1D58E565001CDFDF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FCF743581D36AE5A0068903D /* keyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyCell.swift; sourceTree = "<group>"; };
 		FCF7435A1D36BCF00068903D /* scaleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scaleCell.swift; sourceTree = "<group>"; };
 		FCF7435C1D36BD080068903D /* tuningCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tuningCell.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFA3E151D47D72E0098E379 /* myNavigationController.swift */,
-				FC5E919A1D3FE4B00008FE54 /* HomeViewController.swift */,
+				FCE7659F1D58E565001CDFDF /* HomeViewController.swift */,
 				FC4DEB211D356CAE00CA5A4E /* SettingsViewController.swift */,
 				FC130E361D4DACD800C71A9D /* HelpViewController.swift */,
 			);
@@ -193,7 +193,7 @@
 				FCFA3E161D47D72E0098E379 /* myNavigationController.swift in Sources */,
 				FC5E91971D3E91490008FE54 /* SettingsHelper.swift in Sources */,
 				FCE7659D1D55017E001CDFDF /* toggleIntervalCell.swift in Sources */,
-				FCE7659E1D58111B001CDFDF /* HomeViewController.swift in Sources */,
+				FCE765A01D58E565001CDFDF /* HomeViewController.swift in Sources */,
 				FCF7435D1D36BD080068903D /* tuningCell.swift in Sources */,
 				FC4DEB221D356CAE00CA5A4E /* SettingsViewController.swift in Sources */,
 				FCF743591D36AE5A0068903D /* keyCell.swift in Sources */,

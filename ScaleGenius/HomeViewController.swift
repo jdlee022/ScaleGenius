@@ -13,7 +13,7 @@ protocol OrientationDelegate: class {
 }
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var fretboardView: FretboardView!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -21,7 +21,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Create a multi-line title
         let label = UILabel(frame: CGRectMake(0, 0, 44, 44))
         label.backgroundColor = UIColor.clearColor()
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
         super.viewWillAppear(animated)
         delegate = fretboardView
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
         label.textAlignment = NSTextAlignment.Center
         label.text = "Key: \(SettingsHelper.Key)\nScale: \(SettingsHelper.Scale)"
         self.navigationItem.titleView = label
-
+        
         //notifies us when the orientation of the phone changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.orientationChanged), name: UIDeviceOrientationDidChangeNotification, object: nil)
         
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
             UIApplication.sharedApplication().idleTimerDisabled = false
         }
         else { UIApplication.sharedApplication().idleTimerDisabled = true }
-
+        
         
     }
     
@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
     {
         delegate.orientationChanged()
     }
-
+    
     
     //lock in portrait mode
     override func shouldAutorotate() -> Bool {
@@ -82,8 +82,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, UINavigationCo
     func navigationControllerSupportedInterfaceOrientations(navigationController: UINavigationController) -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
     }
- 
-
+    
+    
 }
-
-
