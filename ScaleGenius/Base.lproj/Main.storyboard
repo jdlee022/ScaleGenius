@@ -609,15 +609,12 @@ Next you need to pick the key that you're progression will be in, major keys ten
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="chartCell" rowHeight="200" id="tS0-nw-Znw">
                                 <rect key="frame" x="0.0" y="814" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="tS0-nw-Znw" id="Lyk-hJ-zBR">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tS0-nw-Znw" id="Lyk-hJ-zBR">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="key chord chart FINAL" translatesAutoresizingMaskIntoConstraints="NO" id="Var-uZ-9Xy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="440"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="440" id="oXY-Ur-4de"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key chord chart FINAL" translatesAutoresizingMaskIntoConstraints="NO" id="Var-uZ-9Xy">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
