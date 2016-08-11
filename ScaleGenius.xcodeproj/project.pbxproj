@@ -20,7 +20,6 @@
 		FC5E919D1D4026F90008FE54 /* UIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5E919C1D4026F90008FE54 /* UIUtility.swift */; };
 		FCE7659D1D55017E001CDFDF /* toggleIntervalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7659C1D55017E001CDFDF /* toggleIntervalCell.swift */; };
 		FCE765A01D58E565001CDFDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7659F1D58E565001CDFDF /* HomeViewController.swift */; };
-		FCE765A21D5A7AF8001CDFDF /* keyChordChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE765A11D5A7AF8001CDFDF /* keyChordChartCell.swift */; };
 		FCF743591D36AE5A0068903D /* keyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF743581D36AE5A0068903D /* keyCell.swift */; };
 		FCF7435B1D36BCF00068903D /* scaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435A1D36BCF00068903D /* scaleCell.swift */; };
 		FCF7435D1D36BD080068903D /* tuningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7435C1D36BD080068903D /* tuningCell.swift */; };
@@ -43,7 +42,6 @@
 		FC5E919C1D4026F90008FE54 /* UIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtility.swift; sourceTree = "<group>"; };
 		FCE7659C1D55017E001CDFDF /* toggleIntervalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toggleIntervalCell.swift; sourceTree = "<group>"; };
 		FCE7659F1D58E565001CDFDF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FCE765A11D5A7AF8001CDFDF /* keyChordChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyChordChartCell.swift; sourceTree = "<group>"; };
 		FCF743581D36AE5A0068903D /* keyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyCell.swift; sourceTree = "<group>"; };
 		FCF7435A1D36BCF00068903D /* scaleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = scaleCell.swift; sourceTree = "<group>"; };
 		FCF7435C1D36BD080068903D /* tuningCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tuningCell.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				FCE7659C1D55017E001CDFDF /* toggleIntervalCell.swift */,
 				FC130E391D4FC45A00C71A9D /* autoLockCell.swift */,
 				FC130E3B1D52937D00C71A9D /* chordsCell.swift */,
-				FCE765A11D5A7AF8001CDFDF /* keyChordChartCell.swift */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -199,7 +196,6 @@
 				FCE765A01D58E565001CDFDF /* HomeViewController.swift in Sources */,
 				FCF7435D1D36BD080068903D /* tuningCell.swift in Sources */,
 				FC4DEB221D356CAE00CA5A4E /* SettingsViewController.swift in Sources */,
-				FCE765A21D5A7AF8001CDFDF /* keyChordChartCell.swift in Sources */,
 				FCF743591D36AE5A0068903D /* keyCell.swift in Sources */,
 				FC130E3C1D52937D00C71A9D /* chordsCell.swift in Sources */,
 				FC4DEB101D35586900CA5A4E /* AppDelegate.swift in Sources */,
