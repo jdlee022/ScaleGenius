@@ -1,7 +1,5 @@
 # ScaleGenius
 
-https://itunes.apple.com/us/app/scalegenius-scales-for-alternate-guitar-tunings/id1141755821?mt=8
-
 ScaleGenius is an easy to use reference guide for guitar players who like to experiment and practice with alternate tunings. The Help Guide allows players of any experience level to get the most out of ScaleGenius by providing useful information including scale exercises and a songwriting quick-guide that makes songwriting easy for beginners.
 
 ## Highlights
