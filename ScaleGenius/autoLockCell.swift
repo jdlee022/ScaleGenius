@@ -9,10 +9,10 @@
 import UIKit
 
 class autoLockCell: UITableViewCell {
-    
-    
+
+
     @IBOutlet weak var mySwitch: UISwitch!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,22 +21,22 @@ class autoLockCell: UITableViewCell {
         }
         else { mySwitch.setOn(false, animated: true) }
     }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
-    
+
     //toggle autoLock on and off
     @IBAction func toggleAutolock(sender: UISwitch) {
-        if sender.on {
-            UIApplication.sharedApplication().idleTimerDisabled = true
-            NSUserDefaults.standardUserDefaults().setObject("On", forKey: "switchState")
+        if sender.isOn {
+            UIApplication.shared.isIdleTimerDisabled = true
+            UserDefaults.standard.set("On", forKey: "switchState")
         }
         else {
-            UIApplication.sharedApplication().idleTimerDisabled = false
-            NSUserDefaults.standardUserDefaults().setObject("Off", forKey: "switchState")
+            UIApplication.shared.isIdleTimerDisabled = false
+            UserDefaults.standard.set("Off", forKey: "switchState")
         }
     }
 }

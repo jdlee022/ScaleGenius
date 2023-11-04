@@ -16,18 +16,18 @@ class myNavigationController: UINavigationController {
         // Set the back button colors in navigation bar to match navigation items color
         UINavigationBar.appearance().tintColor = UIColor(red: 103/255, green: 47/255, blue:0/255, alpha: 1)
     }
-    
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         let homeVC = HomeViewController()
-        return homeVC.supportedInterfaceOrientations()
-    }
-    
-    override func shouldAutorotate() -> Bool {
-        let homeVC = HomeViewController()
-        return homeVC.shouldAutorotate()
+        return homeVC.supportedInterfaceOrientations
     }
 
-    
+    override var shouldAutorotate: Bool {
+        let homeVC = HomeViewController()
+        return homeVC.shouldAutorotate
+    }
+
+
 
     /*
     // MARK: - Navigation

@@ -157,6 +157,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -316,9 +317,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ScaleGenius/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jdl022.ScaleGenius;
 				PRODUCT_NAME = ScaleGenius;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -328,9 +331,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ScaleGenius/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jdl022.ScaleGenius;
 				PRODUCT_NAME = ScaleGenius;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
