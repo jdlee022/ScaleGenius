@@ -9,34 +9,34 @@
 import UIKit
 
 class scaleCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var scalePicker: UIPickerView!
-    
+
     let scaleArr = ["Major (Ionian)", "Minor (Aeolian)", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Locrian", "Major Pentatonic", "Minor Pentatonic", "Harmonic Minor", "Melodic Minor", "Blues (minor)"]
     var myScale = "Major"
     var myScaleIndex = 0
-    
-    
+
+
     func updateScale() {
-        
+
         //print(myScale)
-        
+
         //set picker components corresponding to myTuningIndex settings
-        let myScaleIndexData = NSUserDefaults.standardUserDefaults()
-        
-        if (myScaleIndexData.valueForKey("ScaleIndex") != nil){
-            myScaleIndex = myScaleIndexData.valueForKey("ScaleIndex") as! NSInteger!
+        let myScaleIndexData = UserDefaults.standard
+
+        if (myScaleIndexData.value(forKey: "ScaleIndex") != nil){
+            myScaleIndex = myScaleIndexData.value(forKey: "ScaleIndex") as! NSInteger
         }
-        
+
         // save myScale with NSUserDefault
-        if let myLoadedString = NSUserDefaults.standardUserDefaults().stringForKey("ScaleString") {
+        if let myLoadedString = UserDefaults.standard.string(forKey: "ScaleString") {
             myScale = myLoadedString
         }
-        
+
         scalePicker.selectRow(myScaleIndex, inComponent: 0, animated: true)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -44,31 +44,31 @@ class scaleCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
         scalePicker.dataSource = self
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return scaleArr.count
     }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return scaleArr[row]
     }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         myScale = scaleArr[row]
-        NSUserDefaults.standardUserDefaults().setObject(myScale, forKey: "ScaleString")
+        UserDefaults.standard.set(myScale, forKey: "ScaleString")
 
         myScaleIndex = NSInteger(row)
-        let myScaleIndexData = NSUserDefaults.standardUserDefaults()
-        myScaleIndexData.setInteger(row, forKey: "ScaleIndex")
+        let myScaleIndexData = UserDefaults.standard
+        myScaleIndexData.set(row, forKey: "ScaleIndex")
         myScaleIndexData.synchronize()
     }
 
